@@ -20,7 +20,7 @@ function Nav() {
             </li>
             <li>
               <Link className="navLink" to="/login">
-                Login / Register
+                Login
               </Link>
             </li>
             <li>
@@ -50,7 +50,7 @@ function Nav() {
             </li>
 
             <li>
-              <Link className="navLink" to="/Dictionary">
+              <Link className="navLink" to="/dictionary">
                 Dictionary
               </Link>
             </li>
