@@ -1,65 +1,59 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import './LandingPage.css';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import "./LandingPage.css";
 
 // CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
+import RegisterForm from "../RegisterForm/RegistrationForm";
 
 function LandingPage() {
-  const [heading, setHeading] = useState('Welcome');
+  const [heading, setHeading] = useState("Welcome");
   const history = useHistory();
 
   const onLogin = (event) => {
-    history.push('/login');
+    history.push("/login");
   };
 
   return (
     <div className="container">
-      <h2>{heading}</h2>
+      <h1>{heading}</h1>
 
       <div className="grid">
         <div className="grid-col grid-col_8">
+          <p className="subHeader">What is Kanji For You?</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-            ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-            interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-            sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-            elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-            interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-            Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-            luctus. Duis a sapien metus.
+            Kanji For You is a website meant to aid users in their journey to
+            learn Japanese Kanji.
           </p>
+          <p>
+            The website serves as a Kanji dictionary for users. Users can search
+            up a certain kanji. Information about the Kanji will be displayed
+            such as meaning, readings, and example words that use the kanji.
+          </p>
+          <p>
+            Additionally, users can add Kanji to their collection and mark their learning
+            status for that particular kanji. This allows users to keep track of all the Kanji they are
+            learning or have learned.
+          </p>
+          <p>
+            Kanji For You uses kanjiapi.dev, an amazing api that provides
+            information for over 13,000 kanji.
+          </p>
+          <a href="https://kanjiapi.dev/">
+            Click here to find out more about kanjiapi.dev
+          </a>
+          <p className="subHeader">Who made Kanji For You?</p>
 
           <p>
-            Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-            id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-            consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
-            finibus metus facilisis. Nullam eget lectus non urna rhoncus
-            accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-            euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed
-            lobortis augue mi vel felis. Duis ultrices sapien at est convallis
-            congue.
+            Kanji For You was created by Paul HoangLong (that's me), a software
+            developer based in Minnesota.
           </p>
 
-          <p>
-            Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-            Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
-            vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed
-            sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
-            non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
-            amet nisi.
-          </p>
+          <a href="https://github.com/hoang208">
+            Click here to see my GitHub
+          </a>
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />
-
-          <center>
-            <h4>Already a Member?</h4>
-            <button className="btn btn_sizeSm" onClick={onLogin}>
-              Login
-            </button>
-          </center>
         </div>
       </div>
     </div>
