@@ -4,7 +4,7 @@ import RegisterForm from "../RegisterForm/RegistrationForm";
 function RegisterPage() {
 
   return (
-    <div>
+    <div className="formContainer">
       <RegisterForm />
     </div>
   );

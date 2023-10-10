@@ -22,11 +22,11 @@ function Nav() {
               <Link className="navLink" to="/login">
                 Login / Register
               </Link>
-              <li>
-                <Link className="navLink" to="/about">
-                  About
-                </Link>
-              </li>
+            </li>
+            <li>
+              <Link className="navLink" to="/about">
+                About
+              </Link>
             </li>
           </>
         )}
