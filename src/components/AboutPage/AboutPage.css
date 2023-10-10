@@ -1,0 +1,21 @@
+.aboutContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+    height: 75vh;
+    padding: 2rem;
+    margin: 1rem;
+    grid-template-areas:
+    "content1 content2 content3"
+    "content4 content5 content6"
+    "content7 content8 content9";
+}
+
+#aboutContent1{
+    grid-area: content2;
+}
+
+#aboutContent2{
+    grid-area: content5;
+}

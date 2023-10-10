@@ -2,13 +2,11 @@
 Grid
 -------------------------------------------------------------------------------- */
 
-.grid {
+/* .grid {
   display: flex;
   flex: 0 1 auto;
-  /* defaults to 'row' */
   flex-direction: row;
   flex-wrap: wrap;
-  /* defaults to 'flex-start' */
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -77,4 +75,42 @@ Grid
 .grid-col_12 {
   flex-basis: 100%;
   max-width: 100%;
+} */
+
+.subHeader{
+  font-weight: bold;
+}
+
+.welcomeContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 2fr 2fr;
+  grid-gap: 0.5rem;
+  height: 75vh;
+  padding: 1rem;
+  margin: 1rem;
+  grid-template-areas:
+  "content3 content3"
+  "content1 content4"
+  "content2 content4";
+}
+
+.welcomeForm{
+  grid-area: content4;
+}
+
+.welcomeInfo{
+  grid-area: content3;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.whatInfo{
+  grid-area: content1;
+  max-width: 700px;
+}
+
+.whoInfo{
+  grid-area: content2;
+  max-width: 700px;
 }

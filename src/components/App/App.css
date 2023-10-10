@@ -4,9 +4,18 @@ body,
   height: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  height: 100vh;
 }
 
 img {
@@ -14,19 +23,13 @@ img {
   max-width: 100%;
 }
 
-/* --------------------------------------------------------------------------------
-Container
--------------------------------------------------------------------------------- */
 
 .container {
   padding: 20px;
 }
 
-/* --------------------------------------------------------------------------------
-Button
--------------------------------------------------------------------------------- */
 
-.btn {
+/* .btn {
   display: inline-block;
   padding: 10px 20px;
   border-color: #014041;
@@ -37,9 +40,9 @@ Button
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
-}
+} */
 
-.btn_sizeMin {
+/* .btn_sizeMin {
   min-height: 50px;
   min-width: 100px;
 }
@@ -59,7 +62,6 @@ Button
   text-decoration: none;
 }
 
-/* This line makes the "Register" and "Login" buttons look like links */
 .btn_asLink {
   padding: 0;
   border-width: 0;
@@ -74,11 +76,7 @@ Button
   background-color: transparent;
   border-color: #008183;
   color: #008183;
-}
-
-/* --------------------------------------------------------------------------------
-Alert
--------------------------------------------------------------------------------- */
+} */
 
 .alert {
   box-sizing: border-box;
@@ -91,11 +89,7 @@ Alert
   font-size: 0.8rem;
 }
 
-/* --------------------------------------------------------------------------------
-Form Treatment
--------------------------------------------------------------------------------- */
-
-.formPanel {
+/* .formPanel {
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
@@ -104,9 +98,9 @@ Form Treatment
   background-color: #efefef;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
-}
+} */
 
-input {
+/* input {
   margin: 5px;
   margin-bottom: 10px;
-}
+} */
