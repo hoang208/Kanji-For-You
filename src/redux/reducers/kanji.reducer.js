@@ -1,4 +1,4 @@
-const kanjiReducer = (state = {}, action) => {
+const kanjiReducer = (state = [], action) => {
     switch (action.type) {
       case 'SET_KANJI':
         return action.payload;
