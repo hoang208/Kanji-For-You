@@ -1,15 +1,38 @@
-import React from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector} from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
+import "./UserPage.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function UserPage() {
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
+  const history = useHistory();
+
+  const handleCollection = () => {
+    history.push(`/collection`);
+  };
+
+  const handleDictionary = () => {
+    history.push(`/kanjioftheday`);
+  };
+
   const user = useSelector((store) => store.user);
   return (
-    <div className="container">
+    <div className="homeContainer">
+      <h1>KANJI FOR YOU</h1>
       <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
+      <p>
+        Keep track of all the kanji you have learned in your personal
+        collection. <br></br>The website also serves as a simple kanji
+        dictionary.
+      </p>
+      <p>
+        Are you setup to learn Japanese? 
+        <a href="https://learnjapanese.moe/font/"> Click here to make sure!</a>
+      </p>
+      <div className="buttonContainer">
+        <button onClick={handleCollection}>COLLECTION</button>
+        <button onClick={handleDictionary}>DICTIONARY</button>
+        <button onClick={handleDictionary}>KANJI OF THE DAY</button>
+      </div>
     </div>
   );
 }

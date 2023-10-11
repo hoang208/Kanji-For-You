@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function DictionaryItem(props) {
+export default function KanjiOfTheDayItem(props) {
   const history = useHistory();
 
     const kanjiClicked = () => {
