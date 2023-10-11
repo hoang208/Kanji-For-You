@@ -16,16 +16,16 @@ let searchHandler = (event) => {
   setSearchText(lowerCase);
 };
 
-// const filteredKanji = kanji.filter((kanjiletter) => {
-//   //if no search then return the original
-//   if (searchText === '') {
-//       return kanjiletter;
-//   }
-//   //return item which contains search
-//   else {
-//       return kanjiletter && kanjiletter.toLowerCase().includes(searchText)
-//   }
-// })
+const filteredKanji = kanji.filter((kanjiletter) => {
+  //if no search then return the original
+  if (searchText === '') {
+      return kanjiletter;
+  }
+  //return item which contains search
+  else {
+      return kanjiletter && kanjiletter.toLowerCase().includes(searchText)
+  }
+})
 
 useEffect(() => {
     dispatch({ type: "GET_KANJI" });
@@ -37,7 +37,7 @@ return(
         <input type="text" className="searchInput" onChange={searchHandler} placeholder="Search Kanji..."></input>
         </div>
         <div className="cardWrapper">
-        {kanji.slice(0, 12).map((kanjiletter) => (
+        {filteredKanji.slice(0, 12).map((kanjiletter) => (
           <DictionaryItem
             key={kanjiletter}
             kanji={kanjiletter}
