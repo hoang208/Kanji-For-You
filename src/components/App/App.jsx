@@ -23,6 +23,7 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import "./App.css";
 import Dictionary from "../Dictionary/Dictionary";
 import KanjiOfTheDay from "../KanjiOfTheDay/KanjiOfTheDay";
+import KanjiDetails from "../KanjiDetails/KanjiDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -109,6 +110,10 @@ function App() {
 
           <ProtectedRoute exact path="/kanjioftheday">
             <KanjiOfTheDay />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/kanji/:kanji">
+            <KanjiDetails />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
