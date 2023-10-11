@@ -22,4 +22,6 @@ CREATE TABLE "collection" (
   "study_notes" VARCHAR (1000) DEFAULT 'No study note available'
 );
 
-INSERT INTO "status" ("status") VALUES ('Not Learned'),('Plan to Learn'),('Learning'),('Learned')
+INSERT INTO "status" ("status") VALUES ('Not Learned'),('Plan to Learn'),('Learning'),('Learned');
+
+INSERT INTO  "collection" ("kanji") VALUES ('一'）;

@@ -15,6 +15,7 @@ export default function KanjiOfTheDay() {
   let month = newDate.getMonth() + 1;
   let year = newDate.getFullYear();
 
+  //calculate random numbers based off today's date
   let random1 = date + month + year
   let random2 = year - month - date
   let random3 = year - 2*(month+date)

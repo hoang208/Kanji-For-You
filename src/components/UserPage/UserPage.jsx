@@ -11,6 +11,10 @@ function UserPage() {
   };
 
   const handleDictionary = () => {
+    history.push(`/dictionary`);
+  };
+
+  const handleKanjiOfTheDay = () => {
     history.push(`/kanjioftheday`);
   };
 
@@ -31,7 +35,7 @@ function UserPage() {
       <div className="buttonContainer">
         <button onClick={handleCollection}>COLLECTION</button>
         <button onClick={handleDictionary}>DICTIONARY</button>
-        <button onClick={handleDictionary}>KANJI OF THE DAY</button>
+        <button onClick={handleKanjiOfTheDay}>KANJI OF THE DAY</button>
       </div>
     </div>
   );

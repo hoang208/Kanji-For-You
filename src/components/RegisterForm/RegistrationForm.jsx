@@ -6,7 +6,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
   const [usernameFocused, setUsernameFocused] = useState(false);
@@ -19,12 +18,6 @@ function RegisterForm() {
 
   const handlePasswordFocus = (e) => {
     setPasswordFocused(true);
-  };
-
-  const [confirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
-
-  const handleConfirmPasswordFocus = (e) => {
-    setConfirmPasswordFocused(true);
   };
 
   const registerUser = (event) => {
