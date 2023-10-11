@@ -3,7 +3,7 @@ import { put } from "redux-saga/effects";
 
 
 function* getCollection(action) {
-    // get kanji from the API
+    // get collection for specific kanji from database
     try {
       const collection = yield axios.get(`/api/collection/${action.payload}`);
       console.log("get all:", collection.data);

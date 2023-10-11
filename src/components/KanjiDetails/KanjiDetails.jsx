@@ -10,6 +10,7 @@ export default function KanjiDetails(){
 
     useEffect(() => {
         dispatch({ type: "GET_COLLECTION", payload: params.kanji });
+        dispatch({ type: "GET_DETAILS", payload: params.kanji });
       }, []);
 
 }

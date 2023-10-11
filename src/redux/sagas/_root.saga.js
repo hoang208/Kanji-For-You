@@ -5,6 +5,7 @@ import userSaga from './user.saga';
 import kanjiSaga from './kanji.saga';
 import postKanji from './postKanji.saga';
 import getCollection from './getCollection.saga';
+import getDetails from './getDetails.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -20,6 +21,7 @@ export default function* rootSaga() {
     userSaga(),
     takeEvery("GET_KANJI", kanjiSaga),
     takeEvery("POST_KANJI", postKanji),
-    takeEvery("GET_COLLECTION", getCollection)
+    takeEvery("GET_COLLECTION", getCollection),
+    takeEvery("GET_DETAILS", getDetails)
   ]);
 }
