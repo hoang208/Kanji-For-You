@@ -1,0 +1,6 @@
+.words{
+    max-height: 300px;
+    width: 50%;
+    overflow-y: scroll;
+    border: solid 1px black;
+}

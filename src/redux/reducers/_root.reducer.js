@@ -6,6 +6,8 @@ import status from './status.reducer';
 import meanings from './meanings.reducer';
 import kun from  './kun.reducer';
 import on from  './on.reducer';
+import words from  './words.reducer';
+import studyNotes from './studyNotes.reducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -21,6 +23,8 @@ const rootReducer = combineReducers({
   meanings, //contain meaning
   kun,
   on,
+  words,
+  studyNotes,
 });
 
 export default rootReducer;

@@ -29,8 +29,8 @@ function UserPage() {
         dictionary.
       </p>
       <p>
-        Are you setup to learn Japanese? 
-        <a href="https://learnjapanese.moe/font/"> Click here to make sure!</a>
+        Are you setup to learn Japanese?{" "}
+        <a href="https://learnjapanese.moe/font/">Click here to make sure!</a>
       </p>
       <div className="buttonContainer">
         <button onClick={handleCollection}>COLLECTION</button>

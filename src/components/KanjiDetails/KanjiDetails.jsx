@@ -1,10 +1,12 @@
 import {
+  Link,
   useHistory,
   useParams,
 } from "react-router-dom/cjs/react-router-dom.min";
 import "./KanjiDetails.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import Word from "./Word";
 
 export default function KanjiDetails() {
   const dispatch = useDispatch();
@@ -15,12 +17,18 @@ export default function KanjiDetails() {
   const kun = useSelector((store) => store.kun);
   const on = useSelector((store) => store.on);
   const status = useSelector((store) => store.status);
+  const words = useSelector((store) => store.words);
+  const notes = useSelector((store) => store.studyNotes);
+
+  console.log("notes", notes);
 
   useEffect(() => {
     dispatch({ type: "GET_MEANINGS", payload: params.kanji });
     dispatch({ type: "GET_KUN", payload: params.kanji });
     dispatch({ type: "GET_ON", payload: params.kanji });
     dispatch({ type: "GET_STATUS", payload: params.kanji });
+    dispatch({ type: "GET_WORDS", payload: params.kanji });
+    dispatch({ type: "GET_NOTES", payload: params.kanji });
   }, []);
 
   return (
@@ -57,6 +65,29 @@ export default function KanjiDetails() {
       <div className="status">
         <button disabled>{status}</button>
         <button className="editStatus">Edit</button>
+      </div>
+      <div className="words">
+        <h2>Words</h2>
+        {words.map((word, i) => (
+          <Word
+            key={i}
+            meanings={word.meanings[0].glosses}
+            variants={word.variants[0].written}
+          />
+        ))}
+      </div>
+      <div className="studyNotes">
+        <h2>Study Notes</h2>
+        {notes.length ? (
+          <p>{notes}</p>
+        ) : (
+          <p>
+            You have no study notes for this kanji.{" "}
+            <Link className="navLink" to="/about">
+              Click here to add notes.
+            </Link>
+          </p>
+        )}
       </div>
     </div>
   );
