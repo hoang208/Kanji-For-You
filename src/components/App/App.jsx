@@ -24,6 +24,7 @@ import "./App.css";
 import Dictionary from "../Dictionary/Dictionary";
 import KanjiOfTheDay from "../KanjiOfTheDay/KanjiOfTheDay";
 import KanjiDetails from "../KanjiDetails/KanjiDetails";
+import DictionaryLoad from "../Dictionary/DictionaryLoad";
 
 function App() {
   const dispatch = useDispatch();
@@ -108,11 +109,15 @@ function App() {
             <Dictionary />
           </ProtectedRoute>
 
+          <ProtectedRoute path="/dictionary/:count">
+            <DictionaryLoad />
+          </ProtectedRoute>
+
           <ProtectedRoute exact path="/kanjioftheday">
             <KanjiOfTheDay />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path="/kanji/:kanji">
+          <ProtectedRoute path="/kanji/:kanji">
             <KanjiDetails />
           </ProtectedRoute>
 

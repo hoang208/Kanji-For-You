@@ -8,7 +8,12 @@ router.get("/:kanji", (req, res) => {
     console.log("is authenticated?", req.isAuthenticated());
     console.log("user", req.user);
 
-    let queryText = `SELECT * FROM "collection" WHERE "user_id" = $1 AND "kanji" = $2`;
+    let queryText = `SELECT "study_notes", "status"
+    FROM "collection"
+    JOIN "user" ON "user"."id"="collection"."user_id"
+    JOIN "status" ON "status"."id"="collection"."status_id"
+    WHERE "user_id" = $1 AND "kanji" = $2
+    GROUP BY "study_notes", "status"`;
 
     pool
       .query(queryText, [req.user.id, req.params.kanji])
