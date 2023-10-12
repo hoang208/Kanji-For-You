@@ -21,8 +21,9 @@ CREATE TABLE "collection" (
   "user_id" INT REFERENCES "user" NOT NULL,
   "kanji" VARCHAR (80) UNIQUE NOT NULL,
   "status_id" INT REFERENCES "status" NOT NULL　DEFAULT 1,
-  "study_notes" VARCHAR (1000) DEFAULT 'No study note available'
+  "study_notes" VARCHAR (1000) DEFAULT ''
 );
+
 
 
 INSERT INTO "status" ("status") VALUES ('Not Learned'),('Plan to Learn'),('Learning'),('Learned');

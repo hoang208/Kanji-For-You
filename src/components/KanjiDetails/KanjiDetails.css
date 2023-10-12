@@ -1,6 +1,96 @@
-.words{
-    max-height: 300px;
-    width: 50%;
-    overflow-y: scroll;
-    border: solid 1px black;
+.words {
+  max-height: 300px;
+  overflow-y: scroll;
+  border: solid 1px black;
+}
+
+.detailsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+  height: 75vh;
+  padding: 2rem;
+  margin: 1rem;
+  grid-template-areas:
+    "content1 content2 content2 content2"
+    "content3 content3 content4 content4";
+}
+
+.cardCharacter {
+  grid-area: content1;
+}
+
+.kanjiInfo {
+  grid-area: content2;
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.words {
+  grid-area: content3;
+}
+
+.studyNotes {
+  grid-area: content4;
+}
+
+.cardCharacterTitle {
+  padding: 1rem;
+  font-size: 10rem;
+  text-align: center;
+}
+
+.details {
+  cursor: default;
+  width: auto;
+  padding: 0.25rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  font-size: 1.25rem;
+  margin: 0.25rem;
+}
+
+.meaning {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+.kun {
+  background-color: rgba(0, 255, 0, 0.4);
+}
+
+.on {
+  background-color: rgba(0, 0, 255, 0.4);
+}
+
+.status {
+    background-color: rgba(0,255, 255, 0.4);
+  }
+
+.detailsLabel {
+  padding: 0.25rem;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.detailsInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.statusInfo{
+    display: flex;
 }

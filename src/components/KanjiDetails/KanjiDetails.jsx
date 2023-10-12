@@ -20,7 +20,7 @@ export default function KanjiDetails() {
   const words = useSelector((store) => store.words);
   const notes = useSelector((store) => store.studyNotes);
 
-  console.log("notes", notes);
+  console.log("status", status);
 
   useEffect(() => {
     dispatch({ type: "GET_MEANINGS", payload: params.kanji });
@@ -38,33 +38,53 @@ export default function KanjiDetails() {
           <h1 className="cardCharacterTitle">{params.kanji}</h1>
         </div>
       </div>
-      <div className="meanings">
-        <h2>Meanings</h2>
-        {meanings.map((meaning) => (
-          <button className="meaningBtn" key={meaning} disabled>
-            {meaning}
-          </button>
-        ))}
-      </div>
-      <div className="kunReadings">
-        <h2>Kun Readings</h2>
-        {kun.map((reading) => (
-          <button className="kunBtn" key={reading} disabled>
-            {reading}
-          </button>
-        ))}
-      </div>
-      <div className="onReadings">
-        <h2>On Readings</h2>
-        {on.map((reading) => (
-          <button className="onBtn" key={reading} disabled>
-            {reading}
-          </button>
-        ))}
-      </div>
-      <div className="status">
-        <button disabled>{status}</button>
-        <button className="editStatus">Edit</button>
+      <div className="kanjiInfo">
+        <div className="info">
+          <div className="detailsLabel">
+            <h2 className="detailsLabel"> Meanings</h2>
+          </div>
+          <div className="detailsInfo">
+            {meanings.map((meaning) => (
+              <p className="details meaning" key={meaning} disabled>
+                {meaning}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className="info">
+          <div className="detailsLabel">
+            <h2>Kun</h2>
+          </div>
+          <div className="detailsInfo">
+            {kun.map((reading) => (
+              <p className="details kun" key={reading} disabled>
+                {reading}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className="info">
+          <div className="detailsLabel">
+            <h2 className="detailsLabel">On</h2>
+          </div>
+          <div className="detailsInfo">
+            {" "}
+            {on.map((reading) => (
+              <p className="details on" key={reading} disabled>
+                {reading}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className="info">
+          <div className="detailsLabel">
+            <h2>Status</h2>
+          </div>
+          <div className="statusInfo">
+            <p className="details status">{status}</p>
+            <button className="editStatus">Edit</button>
+          </div>
+        </div>
       </div>
       <div className="words">
         <h2>Words</h2>
@@ -83,7 +103,7 @@ export default function KanjiDetails() {
         ) : (
           <p>
             You have no study notes for this kanji.{" "}
-            <Link className="navLink" to="/about">
+            <Link className="navLink" to="/kanji/:kanji/add">
               Click here to add notes.
             </Link>
           </p>
