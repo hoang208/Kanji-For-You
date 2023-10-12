@@ -10,7 +10,7 @@ import Word from "./Word";
 import StatusForm from "./StatusForm";
 import { createPortal } from "react-dom";
 
-export default function KanjiDetails() {
+export default function ChangeNotes() {
   const dispatch = useDispatch();
   const params = useParams();
   const history = useHistory();
@@ -25,11 +25,12 @@ export default function KanjiDetails() {
   const notes = useSelector((store) => store.studyNotes);
   const kanji = params.kanji;
 
-
-  const [noteToDelete, setNoteToDelete] = useState({
-    notes: '',
+  const [noteToUpdate, setNoteToUpdate] = useState({
+    notes: notes,
     kanji: kanji,
   });
+
+  console.log("status", status);
 
   useEffect(() => {
     dispatch({ type: "GET_MEANINGS", payload: params.kanji });
@@ -40,16 +41,23 @@ export default function KanjiDetails() {
     dispatch({ type: "GET_NOTES", payload: params.kanji });
   }, []);
 
-const handleEdit = () => {
-  history.push(`/kanji/${params.kanji}/Edit`)
-}
+  const handleNotesChange = (event) => {
+    setNoteToUpdate({ ...noteToUpdate, notes: event.target.value });
+  };
 
-const handleDelete = () => {
-  dispatch({
-    type: "UPDATE_NOTES",
-    payload: noteToDelete,
-  });
-}
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: "UPDATE_NOTES",
+      payload: noteToUpdate,
+    });
+    history.push(`/kanji/${params.kanji}`);
+  };
+
+  const handleCancel = () => {
+    console.log("cancel button pushed");
+    history.push(`/kanji/${params.kanji}`);
+  };
 
   return (
     <div className="detailsContainer">
@@ -101,7 +109,7 @@ const handleDelete = () => {
           <div className="statusInfo">
             <p className={`details status ${status}`}>{status}</p>
             <button className="button" onClick={() => setFormOpen(true)}>
-              Edit
+              EDIT
             </button>
           </div>
         </div>
@@ -118,27 +126,26 @@ const handleDelete = () => {
       </div>
       <div className="studyNotes">
         <h2>Study Notes</h2>
-        {notes.length ? (
-          <div className="textareaContainer">
-            <p className="textarea notes">{notes}</p>
+        <div className="textareaContainer">
+          <form onSubmit={handleSubmit}>
+            <textarea
+              className="textarea"
+              placeholder="You have no study notes for this kanji..."
+              onChange={handleNotesChange}
+              defaultValue={notes}
+              maxLength="1000"
+            ></textarea>
             <div className="addNotesBtn">
-              <button className="button statusBtn" onClick={handleEdit}>Edit</button>
+              <button className="button statusBtn save">{params.change}</button>
               <button
                 className="button statusBtn cancel"
-                onClick={handleDelete}
+                onClick={handleCancel}
               >
-                Delete
+                Cancel
               </button>
             </div>
-          </div>
-        ) : (
-          <p>
-            You have no study notes for this kanji.{" "}
-            <Link className="navLink" to={`/kanji/${params.kanji}/Add`}>
-              Click here to add notes.
-            </Link>
-          </p>
-        )}
+          </form>
+        </div>
       </div>
       {formOpen &&
         createPortal(

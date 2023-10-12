@@ -25,6 +25,7 @@ import Dictionary from "../Dictionary/Dictionary";
 import KanjiOfTheDay from "../KanjiOfTheDay/KanjiOfTheDay";
 import KanjiDetails from "../KanjiDetails/KanjiDetails";
 import DictionaryLoad from "../Dictionary/DictionaryLoad";
+import ChangeNotes from "../KanjiDetails/ChangeNotes";
 
 function App() {
   const dispatch = useDispatch();
@@ -121,8 +122,8 @@ function App() {
             <KanjiDetails />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path="/kanji/:kanji/add">
-            <KanjiDetails />
+          <ProtectedRoute exact path="/kanji/:kanji/:change">
+            <ChangeNotes />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

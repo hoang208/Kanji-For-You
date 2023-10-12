@@ -54,7 +54,7 @@ export default function StatusForm({ setFormOpen, kanji }) {
             ))}
           </select>
           <div className="statusFormBtns">
-            <button type="submit" className="button save statusSave">
+            <button type="submit" className="button statusBtn save">
               Save
             </button>
             <button className="button statusBtn cancel" onClick={handleClose}>

@@ -40,4 +40,30 @@ router.post('/', (req, res) => {
   // endpoint functionality
 });
 
+router.put("/:kanji", (req, res) => {
+  if (req.isAuthenticated()) {
+    console.log("/kanji put route");
+    console.log(req.params.kanji);
+    console.log("is authenticated?", req.isAuthenticated());
+    console.log("user", req.user);
+    console.log(req.body.notes)
+
+    let queryText = `UPDATE "collection" SET "study_notes" = $1 WHERE "kanji" = $2 AND "user_id"= $3`;
+
+    pool
+      .query(queryText, [req.body.notes, req.params.kanji, req.user.id])
+      .then((result) => {
+        console.log("query successful", queryText)
+        res.sendStatus(200);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+  } else {
+    res.sendStatus(403);
+  }
+  // endpoint functionality
+});
+
 module.exports = router;
