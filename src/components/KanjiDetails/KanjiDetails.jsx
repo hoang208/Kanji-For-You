@@ -87,7 +87,7 @@ export default function KanjiDetails() {
         </div>
       </div>
       <div className="words">
-        <h2>Words</h2>
+        <h2 className="wordTitle">Words</h2>
         {words.map((word, i) => (
           <Word
             key={i}
