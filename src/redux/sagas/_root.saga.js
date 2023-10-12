@@ -10,6 +10,7 @@ import getKun from './getKun.saga';
 import getOn from './getOn.saga';
 import getWords from './getWords.saga';
 import getNotes from './getNotes.saga';
+import putStatus from './putStatus.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -31,5 +32,6 @@ export default function* rootSaga() {
     takeEvery("GET_ON", getOn),
     takeEvery("GET_WORDS", getWords),
     takeEvery("GET_NOTES", getNotes),
+    takeEvery("UPDATE_STATUS", putStatus),
   ]);
 }

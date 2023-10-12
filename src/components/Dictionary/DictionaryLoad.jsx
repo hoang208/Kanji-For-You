@@ -54,8 +54,8 @@ return(
           />
         ))}
         </div>
-        <div>
-            <button onClick={handleLoad}>Load More Kanji</button>
+        <div className="search">
+            <button className="button load" onClick={handleLoad}>Load More Kanji</button>
         </div>
     </div>
 )

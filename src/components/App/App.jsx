@@ -117,7 +117,11 @@ function App() {
             <KanjiOfTheDay />
           </ProtectedRoute>
 
-          <ProtectedRoute path="/kanji/:kanji">
+          <ProtectedRoute exact path="/kanji/:kanji">
+            <KanjiDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/kanji/:kanji/add">
             <KanjiDetails />
           </ProtectedRoute>
 

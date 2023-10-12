@@ -7,11 +7,16 @@ import "./KanjiDetails.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import Word from "./Word";
+import StatusForm from "./StatusForm";
+import { createPortal } from "react-dom";
 
 export default function KanjiDetails() {
   const dispatch = useDispatch();
   const params = useParams();
   const history = useHistory();
+
+
+  const [formOpen, setFormOpen] = useState(false);
 
   const meanings = useSelector((store) => store.meanings);
   const kun = useSelector((store) => store.kun);
@@ -19,6 +24,7 @@ export default function KanjiDetails() {
   const status = useSelector((store) => store.status);
   const words = useSelector((store) => store.words);
   const notes = useSelector((store) => store.studyNotes);
+  const kanji = params.kanji
 
   console.log("status", status);
 
@@ -81,8 +87,10 @@ export default function KanjiDetails() {
             <h2>Status</h2>
           </div>
           <div className="statusInfo">
-            <p className="details status">{status}</p>
-            <button className="editStatus">Edit</button>
+            <p className={`details status ${status}`}>{status}</p>
+            <button className="button" onClick={() => setFormOpen(true)}>
+              EDIT
+            </button>
           </div>
         </div>
       </div>
@@ -103,12 +111,13 @@ export default function KanjiDetails() {
         ) : (
           <p>
             You have no study notes for this kanji.{" "}
-            <Link className="navLink" to="/kanji/:kanji/add">
+            <Link className="navLink" to={`/kanji/${params.kanji}/add`}>
               Click here to add notes.
             </Link>
           </p>
         )}
       </div>
+      {formOpen && createPortal(<StatusForm setFormOpen={setFormOpen} kanji={kanji}/>,document.body)}
     </div>
   );
 }
