@@ -24,13 +24,12 @@ function UserPage() {
       <h1>KANJI FOR YOU</h1>
       <h2>Welcome, {user.username}!</h2>
       <p>
-        Keep track of all the kanji you have learned in your personal
-        collection. <br></br>The website also serves as a simple kanji
-        dictionary.
+        Keep track of all the kanji you have learned in your own personal
+        collection. <br></br>Easily search up any kanji in the dictionary!
       </p>
       <p>
-        Are you setup to learn Japanese? 
-        <a href="https://learnjapanese.moe/font/"> Click here to make sure!</a>
+        Are you setup to learn Japanese?{" "}
+        <a href="https://learnjapanese.moe/font/">Click here to make sure!</a>
       </p>
       <div className="buttonContainer">
         <button onClick={handleCollection}>COLLECTION</button>

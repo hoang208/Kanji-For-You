@@ -1,0 +1,240 @@
+.detailsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+  height: 85vh;
+  padding: 2rem;
+  margin: 1rem;
+  grid-template-areas:
+    "content1 content2 content2 content2"
+    "content3 content3 content4 content4";
+}
+
+.detailsContainer h2 {
+  padding: 0.5rem;
+}
+
+.cardCharacter {
+  grid-area: content1;
+}
+
+.kanjiInfo {
+  grid-area: content2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.words {
+  grid-area: content3;
+  max-height: auto;
+  overflow-y: scroll;
+}
+
+.studyNotes {
+  grid-area: content4;
+}
+
+.cardCharacterTitle {
+  padding: 1rem;
+  font-size: 10rem;
+  text-align: center;
+  background-color: #fff4e0;
+  border-radius: 0.5rem;
+}
+
+.details {
+  cursor: default;
+  width: auto;
+  padding: 0.25rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  font-size: 1.25rem;
+  margin: 0.25rem;
+  border: none;
+}
+
+.meaning {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+.kun {
+  background-color: rgba(0, 255, 0, 0.4);
+}
+
+.on {
+  background-color: rgba(0, 0, 255, 0.4);
+}
+
+.status {
+  white-space: nowrap;
+  height: fit-content;
+  justify-content: center;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.Not.Learned {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.Plan.to.Learn {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+.Learning {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.Learned {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.detailsLabel {
+  padding: 0.25rem;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.detailsInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.statusInfo {
+  display: flex;
+}
+
+.word {
+  background-color: rgba(255, 255, 0, 0.4);
+  white-space: nowrap;
+}
+
+.definitions {
+  line-height: 1.15;
+  text-align: right;
+  padding: 0.25rem;
+}
+
+.wordInfo {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.wordTitle {
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.statusFormContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.statusForm {
+  border-radius: 0.5rem;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+}
+
+.statusFormContainer form {
+  background-color: white;
+  box-shadow: none;
+}
+
+.statusFormBtns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.statusBtn {
+  width: fit-content;
+  height: fit-content;
+}
+
+.save {
+  background-color: white;
+  border: 2px solid rgba(64, 169, 108);
+  color: rgba(64, 169, 108);
+}
+
+.save:hover {
+  background: rgba(64, 169, 108);
+  color: white;
+}
+
+.cancel {
+  background-color: white;
+  border: 2px solid rgba(255, 0, 0, 0.4);
+  color: rgba(255, 0, 0, 0.4);
+}
+
+.cancel:hover {
+  background: rgba(255, 0, 0, 0.4);
+  color: white;
+}
+
+.select {
+  border: none;
+  appearance: none;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.15;
+  cursor: pointer;
+}
+
+.statusInfo button {
+  padding: 0.5rem;
+}
+
+.textarea {
+  box-sizing: border-box;
+  height: 200px;
+  width: 100%;
+  resize: none;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  border: 2px solid #ccc;
+}
+
+.addNotesBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addNotesBtn button {
+  width: 8rem;
+}
+
+.textarea.notes {
+  border: none;
+  background-color: white;
+  max-height: auto;
+  overflow-y: scroll;
+}

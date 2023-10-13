@@ -27,7 +27,7 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form onSubmit={login}>
+    <form onSubmit={login} className="form">
       <h2>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
@@ -57,7 +57,7 @@ function LoginForm() {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <button>Log In</button>
+      <button className="button">Log In</button>
       <Link className="registerLink" to="/registration">
         Register
       </Link>

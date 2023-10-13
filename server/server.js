@@ -11,6 +11,9 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const kanjiRouter = require('./routes/kanji.router');
+const collectionRouter = require('./routes/collection.router');
+const detailsRouter = require('./routes/details.router');
+const wordsRouter = require('./routes/words.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -26,6 +29,9 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/kanji', kanjiRouter);
+app.use('/api/collection', collectionRouter);
+app.use('/api/details', detailsRouter);
+app.use('/api/words', wordsRouter);
 
 // Serve static files
 app.use(express.static('build'));
