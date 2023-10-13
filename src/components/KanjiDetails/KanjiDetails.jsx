@@ -41,7 +41,7 @@ export default function KanjiDetails() {
   }, []);
 
 const handleEdit = () => {
-  history.push(`/kanji/${params.kanji}/Edit`)
+  history.push(`/kanji/${params.kanji}/Save`)
 }
 
 const handleDelete = () => {
