@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function DictionaryItem(props) {
+export default function CollectionItem(props) {
   const history = useHistory();
 
   const kanjiClicked = () => {
@@ -8,9 +8,10 @@ export default function DictionaryItem(props) {
   };
 
   return (
-    <div className="card">
-      <div className="cardBody">
+    <div className={`card`}>
+      <div className={`cardBody`}>
         <h1 className="cardTitle">{props.kanji}</h1>
+        <h2>{props.status}</h2>
       </div>
       <button className="cardBtn" onClick={kanjiClicked}>
         View Kanji

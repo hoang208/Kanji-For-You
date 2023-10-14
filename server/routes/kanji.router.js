@@ -21,23 +21,31 @@ router.get("/", (req, res) => {
   }
 });
 
-router.post('/', (req, res) => {
-    if (req.isAuthenticated()) {
-        console.log('/kanji POST route');
-        console.log(req.body);
-        console.log('is authenticated?', req.isAuthenticated());
-        console.log('user', req.user);
+router.post('/', async (req, res) => {
+  const client = await pool.connect();
+  
+  try {
+    const kanjis = req.body.kanji;
 
-        let queryText = `INSERT INTO "collection" ("kanji", "user_id")
-        VALUES ($1, $2)`;
-        pool.query(queryText, [req.body.kanji, req.user.id])
-        .then((result) => {
-            res.sendStatus(200);
-        }).catch((err) => res.sendStatus(500));
-    } else {
-        res.sendStatus(403);
-    }
-  // endpoint functionality
+      await Promise.all(kanjis.map(kanji => {
+          const insertLineItemText =  `INSERT INTO collection ("kanji", "user_id")
+          VALUES (
+              $1, $2
+          )
+              ;`;
+          const insertLineItemValues = [kanji, req.user.id];
+          return client.query(insertLineItemText, insertLineItemValues);
+      }));
+
+      await client.query('COMMIT')
+      res.sendStatus(201);
+  } catch (error) {
+      await client.query('ROLLBACK')
+      console.log('Error POST /api/kanji', error);
+      res.sendStatus(500);
+  } finally {
+      client.release()
+  }
 });
 
 router.put("/:kanji", (req, res) => {
@@ -46,14 +54,14 @@ router.put("/:kanji", (req, res) => {
     console.log(req.params.kanji);
     console.log("is authenticated?", req.isAuthenticated());
     console.log("user", req.user);
-    console.log(req.body.notes)
+    console.log(req.body.notes);
 
     let queryText = `UPDATE "collection" SET "study_notes" = $1 WHERE "kanji" = $2 AND "user_id"= $3`;
 
     pool
       .query(queryText, [req.body.notes, req.params.kanji, req.user.id])
       .then((result) => {
-        console.log("query successful", queryText)
+        console.log("query successful", queryText);
         res.sendStatus(200);
       })
       .catch((err) => {

@@ -1,0 +1,65 @@
+.buttonGroup button {
+  background-color: transparent;
+  border: 2px solid white; 
+  padding: 1rem; 
+  cursor: pointer; 
+  float: left;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+.buttonGroup button:not(:last-child) {
+  border-right: none;
+}
+
+.buttonGroup button:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.buttonGroup button:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+} 
+
+
+.buttonGroup button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.buttonGroup button.Not.Learned {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.buttonGroup button.Plan.to.Learn {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+.buttonGroup button.Learning {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.buttonGroup button.Learned {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.colectionHeader {
+  border-radius: 0.25rem;
+  margin: auto 2rem;
+}
+
+.collectionBorder{
+    margin: 3rem;
+    border-radius: 0.2rem;
+}
+
+.collectionTitle {
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}

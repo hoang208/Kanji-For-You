@@ -10,7 +10,7 @@ const history = useHistory();
 const params = useParams()
 
 const count = params.count
-const newCount = parseInt(count) + 12
+const newCount = parseInt(count) + 20
 const kanji = useSelector(store=>store.kanji)
 
 const [searchText, setSearchText] = useState("");

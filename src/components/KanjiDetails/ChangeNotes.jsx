@@ -108,8 +108,8 @@ export default function ChangeNotes() {
           </div>
           <div className="statusInfo">
             <p className={`details status ${status}`}>{status}</p>
-            <button className="button" onClick={() => setFormOpen(true)}>
-              EDIT
+            <button className="button edit" onClick={() => setFormOpen(true)}>
+              Edit
             </button>
           </div>
         </div>

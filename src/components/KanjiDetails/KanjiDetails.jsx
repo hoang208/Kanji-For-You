@@ -46,7 +46,7 @@ const handleEdit = () => {
 
 const handleDelete = () => {
   dispatch({
-    type: "UPDATE_NOTES",
+    type: "DELETE_NOTES",
     payload: noteToDelete,
   });
 }
@@ -100,7 +100,7 @@ const handleDelete = () => {
           </div>
           <div className="statusInfo">
             <p className={`details status ${status}`}>{status}</p>
-            <button className="button" onClick={() => setFormOpen(true)}>
+            <button className="button edit" onClick={() => setFormOpen(true)}>
               Edit
             </button>
           </div>
@@ -122,7 +122,7 @@ const handleDelete = () => {
           <div className="textareaContainer">
             <p className="textarea notes">{notes}</p>
             <div className="addNotesBtn">
-              <button className="button statusBtn" onClick={handleEdit}>Edit</button>
+              <button className="button statusBtn edit" onClick={handleEdit}>Edit</button>
               <button
                 className="button statusBtn cancel"
                 onClick={handleDelete}

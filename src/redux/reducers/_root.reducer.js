@@ -8,6 +8,7 @@ import kun from  './kun.reducer';
 import on from  './on.reducer';
 import words from  './words.reducer';
 import studyNotes from './studyNotes.reducer'
+import all from  './all.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   on,
   words,
   studyNotes,
+  all,
 });
 
 export default rootReducer;
