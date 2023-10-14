@@ -46,7 +46,7 @@ const handleEdit = () => {
 
 const handleDelete = () => {
   dispatch({
-    type: "UPDATE_NOTES",
+    type: "DELETE_NOTES",
     payload: noteToDelete,
   });
 }

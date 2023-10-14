@@ -3,7 +3,6 @@ import { put } from "redux-saga/effects";
 
 
 function* getMeanings(action) {
-    // get kanji meaing from the API
     try {
       const details = yield axios.get(`/api/details/${action.payload}`);
       console.log("get all:", details.data);

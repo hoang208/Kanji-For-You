@@ -14,6 +14,7 @@ const kanjiRouter = require('./routes/kanji.router');
 const collectionRouter = require('./routes/collection.router');
 const detailsRouter = require('./routes/details.router');
 const wordsRouter = require('./routes/words.router');
+const allRouter = require('./routes/all.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -32,6 +33,7 @@ app.use('/api/kanji', kanjiRouter);
 app.use('/api/collection', collectionRouter);
 app.use('/api/details', detailsRouter);
 app.use('/api/words', wordsRouter);
+app.use('/api/all', allRouter);
 
 // Serve static files
 app.use(express.static('build'));
