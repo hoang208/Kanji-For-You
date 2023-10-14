@@ -7,9 +7,10 @@
     font-size: 3rem;
     background-color: transparent;
     border: none;
+    color: white;
 }
 
 .backTop:hover{
     background-color: transparent;
-    color: white;
+    color: #DF0000;
 }

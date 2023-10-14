@@ -45,7 +45,7 @@
   padding: 1rem;
   font-size: 10rem;
   text-align: center;
-  background-color: #fff4e0;
+  background-color: white;
   border-radius: 0.5rem;
   color: black;
 }
@@ -176,7 +176,7 @@
 }
 
 .save {
-  background-color: white;
+  background-color: transparent;
   border: 2px solid rgba(64, 169, 108);
   color: rgba(64, 169, 108);
 }
@@ -218,9 +218,9 @@
   resize: none;
   border-radius: 0.2rem;
   padding: 0.25rem;
-  background-color: #f8f8f8;
+  background-color: white;
   font-size: 16px;
-  border: 2px solid #ccc;
+  border: 2px solid white;
 }
 
 .addNotesBtn {
