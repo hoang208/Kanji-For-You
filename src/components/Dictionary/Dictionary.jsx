@@ -30,7 +30,7 @@ const filteredKanji = kanji.filter((kanjiletter) => {
 })
 
 const handleLoad = () => {
-    history.push(`/dictionary/24`);
+    history.push(`/dictionary/40`);
   };
 
 
@@ -44,7 +44,7 @@ return(
         <input type="text" className="searchInput" onChange={searchHandler} placeholder="Search Kanji..."></input>
         </div>
         <div className="cardWrapper">
-        {filteredKanji.slice(0, 12).map((kanjiletter) => (
+        {filteredKanji.slice(0, 20).map((kanjiletter) => (
           <DictionaryItem
             key={kanjiletter}
             kanji={kanjiletter}

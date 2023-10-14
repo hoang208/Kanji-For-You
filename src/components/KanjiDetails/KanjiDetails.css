@@ -47,6 +47,7 @@
   text-align: center;
   background-color: #fff4e0;
   border-radius: 0.5rem;
+  color: black;
 }
 
 .details {
@@ -85,8 +86,7 @@
 }
 
 .Not.Learned {
-  border: 1px solid black;
-  background-color: white;
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 .Plan.to.Learn {
@@ -130,14 +130,14 @@
 }
 
 .wordInfo {
-  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 2px rgba(255, 255, 255, 0.2);
 }
 
 .wordTitle {
   position: sticky;
   top: 0px;
-  background-color: white;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 2px rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .statusFormContainer {
@@ -187,9 +187,9 @@
 }
 
 .cancel {
-  background-color: white;
-  border: 2px solid rgba(255, 0, 0, 0.4);
-  color: rgba(255, 0, 0, 0.4);
+  background-color: transparent;
+  border: 2px solid rgba(255, 0, 0);
+  color: rgba(255, 0, 0);
 }
 
 .cancel:hover {
@@ -234,7 +234,17 @@
 
 .textarea.notes {
   border: none;
-  background-color: white;
+  background-color: transparent;
   max-height: auto;
   overflow-y: scroll;
+}
+
+.edit{
+  color: white;
+  border: 2px solid white
+}
+
+.edit:hover{
+  color: black;
+  background-color: white;
 }

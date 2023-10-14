@@ -27,6 +27,8 @@ import KanjiDetails from "../KanjiDetails/KanjiDetails";
 import DictionaryLoad from "../Dictionary/DictionaryLoad";
 import ChangeNotes from "../KanjiDetails/ChangeNotes";
 import Collection from "../Collection/Collection";
+import CollectionLoad from "../Collection/CollectionLoad";
+import BackToTopButton from "../BackToTopButton/BackToTopButton";
 
 function App() {
   const dispatch = useDispatch();
@@ -131,12 +133,17 @@ function App() {
             <Collection />
           </ProtectedRoute>
 
+          <ProtectedRoute path="/collection/:count">
+            <CollectionLoad />
+          </ProtectedRoute>
+
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
+        <BackToTopButton/>
       </div>
     </Router>
   );

@@ -1,0 +1,15 @@
+.backTop{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+    font-size: 3rem;
+    background-color: transparent;
+    border: none;
+}
+
+.backTop:hover{
+    background-color: transparent;
+    color: white;
+}

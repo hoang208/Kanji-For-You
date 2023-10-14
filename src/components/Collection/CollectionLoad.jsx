@@ -2,12 +2,18 @@ import { useEffect, useState } from "react";
 import "./Collection.css";
 import { useDispatch, useSelector } from "react-redux";
 import CollectionItem from "./CollectionItem";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  useHistory,
+  useParams,
+} from "react-router-dom/cjs/react-router-dom.min";
 
-export default function Collection() {
+export default function CollectionLoad() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const params = useParams();
 
+  const count = params.count;
+  const newCount = parseInt(count) + 20;
   const all = useSelector((store) => store.all);
 
   useEffect(() => {
@@ -55,7 +61,7 @@ export default function Collection() {
   };
 
   const handleLoad = () => {
-    history.push(`/collection/40`);
+    history.push(`/collection/${newCount}`);
   };
 
   return (
@@ -79,7 +85,7 @@ export default function Collection() {
         </div>
       </div>
       <div className="cardWrapper">
-        {filteredItems.slice(0, 20).map((item) => (
+        {filteredItems.slice(0, count).map((item) => (
           <CollectionItem
             key={item.id}
             kanji={item.kanji}

@@ -13,6 +13,7 @@
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
   margin: 20px auto 20px;
   grid-area: form;
+  color: black;
 }
 
 
@@ -23,7 +24,6 @@
 }
 
 h2 {
-  color: black;
   text-align: center;
 }
 
@@ -31,7 +31,7 @@ h2 {
   width: 100%;
   padding: 1rem;
   border: none;
-  background-color: white;
+  background-color: transparent;
   border: 2px solid black;
   color: black;
   border-radius: 25px;
@@ -55,6 +55,7 @@ h2 {
   border: none;
   cursor: pointer;
   outline: 0;
+  color: black;
 }
 
 input {
