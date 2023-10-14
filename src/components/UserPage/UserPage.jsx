@@ -7,6 +7,8 @@ function UserPage() {
 const dispatch = useDispatch();
   const history = useHistory();
 
+  const kanji = useSelector(store=>store.kanji)
+
   const handleCollection = () => {
     history.push(`/collection`);
   };
@@ -21,7 +23,22 @@ const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch({ type: "GET_KANJI" });
+    dispatch({
+      type: "POST_KANJI",
+      payload: {
+        kanji: kanji,
+      },
+    });
   }, []);
+
+  useEffect(() => {
+    dispatch({
+      type: "POST_KANJI",
+      payload: {
+        kanji: kanji,
+      },
+    });
+  }, [kanji]);
 
   const user = useSelector((store) => store.user);
   return (
