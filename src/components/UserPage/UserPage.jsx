@@ -1,9 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./UserPage.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function UserPage() {
+const dispatch = useDispatch();
   const history = useHistory();
 
   const handleCollection = () => {
@@ -18,6 +19,10 @@ function UserPage() {
     history.push(`/kanjioftheday`);
   };
 
+  useEffect(() => {
+    dispatch({ type: "GET_KANJI" });
+  }, []);
+
   const user = useSelector((store) => store.user);
   return (
     <div className="homeContainer">
@@ -25,10 +30,10 @@ function UserPage() {
       <h2>Welcome, {user.username}!</h2>
       <p>
         Keep track of all the kanji you have learned in your own personal
-        collection. <br></br>Easily search up any kanji in the dictionary!
+        collection. <br></br>Easily search up any <a href="https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji">jōyō</a> kanji in the dictionary!
       </p>
       <p>
-        Are you setup to learn Japanese?{" "}
+        Are you setup to learn japanese?{" "}
         <a href="https://learnjapanese.moe/font/">Click here to make sure!</a>
       </p>
       <div className="buttonContainer">

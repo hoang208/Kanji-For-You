@@ -26,6 +26,7 @@ import KanjiOfTheDay from "../KanjiOfTheDay/KanjiOfTheDay";
 import KanjiDetails from "../KanjiDetails/KanjiDetails";
 import DictionaryLoad from "../Dictionary/DictionaryLoad";
 import ChangeNotes from "../KanjiDetails/ChangeNotes";
+import Collection from "../Collection/Collection";
 
 function App() {
   const dispatch = useDispatch();
@@ -124,6 +125,10 @@ function App() {
 
           <ProtectedRoute exact path="/kanji/:kanji/:change">
             <ChangeNotes />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/collection">
+            <Collection />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
