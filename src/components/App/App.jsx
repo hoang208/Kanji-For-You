@@ -27,6 +27,8 @@ import ChangeNotes from "../KanjiDetails/ChangeNotes";
 import Collection from "../Collection/Collection";
 import CollectionLoad from "../Collection/CollectionLoad";
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
+import Stats from "../Stats/Stats";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -127,12 +129,15 @@ function App() {
             <CollectionLoad />
           </ProtectedRoute>
 
+          <ProtectedRoute path="/stats">
+            <Stats />
+          </ProtectedRoute>
+
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
-            <h1>404</h1>
+            <ErrorPage />
           </Route>
         </Switch>
-        {/* <Footer /> */}
         <BackToTopButton />
       </div>
     </Router>

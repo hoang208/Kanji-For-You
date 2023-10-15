@@ -14,6 +14,7 @@ import putStatus from "./putStatus.saga";
 import putNotes from "./putNotes.saga";
 import deleteNotes from "./deleteNotes.saga";
 import getAll from "./getAll.saga";
+import getCount from "./getCount.saga"
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -39,5 +40,6 @@ export default function* rootSaga() {
     takeEvery("UPDATE_NOTES", putNotes),
     takeEvery("DELETE_NOTES", deleteNotes),
     takeEvery("GET_ALL", getAll),
+    takeEvery("GET_COUNT", getCount),
   ]);
 }
