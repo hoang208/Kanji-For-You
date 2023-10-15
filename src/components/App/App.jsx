@@ -22,10 +22,8 @@ import "./App.css";
 import Dictionary from "../Dictionary/Dictionary";
 import KanjiOfTheDay from "../KanjiOfTheDay/KanjiOfTheDay";
 import KanjiDetails from "../KanjiDetails/KanjiDetails";
-import DictionaryLoad from "../Dictionary/DictionaryLoad";
 import ChangeNotes from "../KanjiDetails/ChangeNotes";
 import Collection from "../Collection/Collection";
-import CollectionLoad from "../Collection/CollectionLoad";
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
 import Stats from "../Stats/Stats";
 import ErrorPage from "../ErrorPage/ErrorPage";
@@ -106,7 +104,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute path="/dictionary/:count">
-            <DictionaryLoad />
+            <Dictionary />
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/kanjioftheday">
@@ -126,7 +124,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute path="/collection/:count">
-            <CollectionLoad />
+            <Collection />
           </ProtectedRoute>
 
           <ProtectedRoute path="/stats">

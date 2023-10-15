@@ -46,11 +46,20 @@ a:hover {
 
 .alert {
   box-sizing: border-box;
-  padding: 15px 10px;
-  margin: 15px 0;
+  padding: 1rem;
+  margin: 1rem 0;
   border: 2px solid #e01616;
-  background-color: #efefef;
-  border-radius: 3px;
+  background-color: transparent;
+  border-radius: 0.2rem;
   color: #e01616;
   font-size: 0.8rem;
+}
+
+h1{
+  line-height: 1.2;
+  letter-spacing: -0.2rem;
+}
+
+p{
+  line-height: 1.5;
 }

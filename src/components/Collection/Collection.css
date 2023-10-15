@@ -124,6 +124,7 @@ table, th, td {
   background-color: transparent;
   color: white;
   text-align: center;
+  font-size: 1.5em;
 }
 
 .table button {
@@ -137,4 +138,12 @@ table, th, td {
   overflow-y: scroll;
   margin-bottom: 2rem;
   box-shadow: 0 2px 20px #e1e5ee;
+}
+
+.cardBody select {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
 }

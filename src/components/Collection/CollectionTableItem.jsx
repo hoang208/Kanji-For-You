@@ -28,7 +28,7 @@ export default function CollectionTableItem(props) {
 
   return (
     <tr className={props.status}>
-      <td>{props.kanji}</td>
+      <td><h1>{props.kanji}</h1></td>
       <td>
         {" "}
         <select className="select" onChange={handleSelectChange}>

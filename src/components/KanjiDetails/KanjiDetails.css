@@ -253,3 +253,14 @@
   color: black;
   background-color: white;
 }
+
+.statusFormContent{
+  width: fit-content;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.statusFormContent h1 {
+  letter-spacing: normal;
+  margin-bottom: 2rem;
+}

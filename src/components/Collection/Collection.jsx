@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import "./Collection.css";
 import { useDispatch, useSelector } from "react-redux";
 import CollectionItem from "./CollectionItem";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import CollectionTableItem from "./CollectionTableItem";
 
 export default function Collection() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const params = useParams();
 
   const all = useSelector((store) => store.all);
+
+  const count = params.count ? params.count : 20;
+  const newCount = parseInt(count) + 20;
 
   useEffect(() => {
     dispatch({ type: "GET_ALL" });
@@ -57,7 +61,7 @@ export default function Collection() {
   };
 
   const handleLoad = () => {
-    history.push(`/collection/40`);
+    history.push(`/collection/${newCount}`);
   };
 
   const handleGrid = () => {
@@ -151,9 +155,9 @@ export default function Collection() {
         <table className="table">
           <thead className="tableHeader">
             <tr>
-              <th>Kanji</th>
-              <th>Status</th>
-              <th>Dictionary</th>
+              <th><h1>Kanji</h1></th>
+              <th><h1>Status</h1></th>
+              <th><h1>View</h1></th>
             </tr>
           </thead>
           <tbody className="tableBody">
@@ -171,7 +175,7 @@ export default function Collection() {
       ) : (
         <>
           <div className="cardWrapper">
-            {filteredItems.slice(0, 20).map((item) => (
+            {filteredItems.slice(0, count).map((item) => (
               <CollectionItem
                 key={item.id}
                 kanji={item.kanji}

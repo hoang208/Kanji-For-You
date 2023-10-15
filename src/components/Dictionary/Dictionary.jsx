@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DictionaryItem from "./DictionaryItem";
 import "./Dictionary.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Dictionary() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const params = useParams();
 
   const kanji = useSelector((store) => store.kanji);
+
+  const count = params.count ? params.count : 20;
+  const newCount = parseInt(count) + 20;
 
   const [searchText, setSearchText] = useState("");
 
@@ -30,7 +34,7 @@ export default function Dictionary() {
   });
 
   const handleLoad = () => {
-    history.push(`/dictionary/40`);
+    history.push(`/dictionary/${newCount}`);
   };
 
   useEffect(() => {
@@ -48,7 +52,7 @@ export default function Dictionary() {
         ></input>
       </div>
       <div className="cardWrapper">
-        {filteredKanji.slice(0, 20).map((kanjiletter) => (
+        {filteredKanji.slice(0, count).map((kanjiletter) => (
           <DictionaryItem key={kanjiletter} kanji={kanjiletter} />
         ))}
       </div>
