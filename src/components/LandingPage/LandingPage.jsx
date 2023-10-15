@@ -41,23 +41,6 @@ function LandingPage() {
             </div>
           </div>
         </div>
-        <div className="heroSection">
-          <div className="heroBox">
-            <div className="heroContent">
-              <p>
-                Kanji For You was created by Paul HoangLong (that's me), a
-                software developer based in Minnesota.
-              </p>
-
-              <a href="https://github.com/hoang208">
-                <button className="button edit">Check out my GitHub</button>
-              </a>
-            </div>
-            <div className="heroTitle right">
-              <h1 className="subHeader">Who made Kanji For You?</h1>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

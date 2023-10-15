@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Word from "./Word";
 import StatusForm from "./StatusForm";
 import { createPortal } from "react-dom";
+import DeleteModal from "./DeleteModal";
 
 export default function KanjiDetails() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export default function KanjiDetails() {
   const history = useHistory();
 
   const [formOpen, setFormOpen] = useState(false);
+  const [confimartionOpen, setConfimarionOpen] = useState(false);
 
   const meanings = useSelector((store) => store.meanings);
   const kun = useSelector((store) => store.kun);
@@ -24,11 +26,6 @@ export default function KanjiDetails() {
   const words = useSelector((store) => store.words);
   const notes = useSelector((store) => store.studyNotes);
   const kanji = params.kanji;
-
-  const [noteToDelete, setNoteToDelete] = useState({
-    notes: "",
-    kanji: kanji,
-  });
 
   useEffect(() => {
     dispatch({ type: "GET_MEANINGS", payload: params.kanji });
@@ -41,13 +38,6 @@ export default function KanjiDetails() {
 
   const handleEdit = () => {
     history.push(`/kanji/${params.kanji}/Save`);
-  };
-
-  const handleDelete = () => {
-    dispatch({
-      type: "DELETE_NOTES",
-      payload: noteToDelete,
-    });
   };
 
   return (
@@ -126,7 +116,7 @@ export default function KanjiDetails() {
               </button>
               <button
                 className="button statusBtn cancel"
-                onClick={handleDelete}
+                onClick={() => setConfimarionOpen(true)}
               >
                 Delete
               </button>
@@ -144,6 +134,11 @@ export default function KanjiDetails() {
       {formOpen &&
         createPortal(
           <StatusForm setFormOpen={setFormOpen} kanji={kanji} />,
+          document.body
+        )}
+        {confimartionOpen &&
+        createPortal(
+          <DeleteModal setConfimarionOpen={setConfimarionOpen} kanji={kanji} />,
           document.body
         )}
     </div>
