@@ -21,7 +21,7 @@ body {
       rgba(0, 0, 0, 0.75),
       rgba(0, 0, 0, 0.75)
     ),
-    url(images/fuji.jpg);
+    url(../../../images/fuji.jpg);
   background-size: cover;
   background-position: center;
   color: white;

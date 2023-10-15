@@ -25,9 +25,8 @@ export default function KanjiDetails() {
   const notes = useSelector((store) => store.studyNotes);
   const kanji = params.kanji;
 
-
   const [noteToDelete, setNoteToDelete] = useState({
-    notes: '',
+    notes: "",
     kanji: kanji,
   });
 
@@ -40,16 +39,16 @@ export default function KanjiDetails() {
     dispatch({ type: "GET_NOTES", payload: params.kanji });
   }, []);
 
-const handleEdit = () => {
-  history.push(`/kanji/${params.kanji}/Save`)
-}
+  const handleEdit = () => {
+    history.push(`/kanji/${params.kanji}/Save`);
+  };
 
-const handleDelete = () => {
-  dispatch({
-    type: "DELETE_NOTES",
-    payload: noteToDelete,
-  });
-}
+  const handleDelete = () => {
+    dispatch({
+      type: "DELETE_NOTES",
+      payload: noteToDelete,
+    });
+  };
 
   return (
     <div className="detailsContainer">
@@ -122,7 +121,9 @@ const handleDelete = () => {
           <div className="textareaContainer">
             <p className="textarea notes">{notes}</p>
             <div className="addNotesBtn">
-              <button className="button statusBtn edit" onClick={handleEdit}>Edit</button>
+              <button className="button statusBtn edit" onClick={handleEdit}>
+                Edit
+              </button>
               <button
                 className="button statusBtn cancel"
                 onClick={handleDelete}

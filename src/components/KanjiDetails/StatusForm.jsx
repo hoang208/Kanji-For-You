@@ -4,7 +4,10 @@ import { useDispatch } from "react-redux";
 export default function StatusForm({ setFormOpen, kanji }) {
   const dispatch = useDispatch();
 
-  const [statusToUpdate, setStatusToUpdate] = useState({ status_id: 1, kanji: kanji });
+  const [statusToUpdate, setStatusToUpdate] = useState({
+    status_id: 1,
+    kanji: kanji,
+  });
 
   const options = [
     { label: "Not Learned", value: 1 },
@@ -42,13 +45,9 @@ export default function StatusForm({ setFormOpen, kanji }) {
       <div className="statusForm">
         <form onSubmit={handleSubmit} className="form">
           <h2>Choose a Status</h2>
-          <select className="select"  onChange={handleSelectChange}>
+          <select className="select" onChange={handleSelectChange}>
             {options.map((option) => (
-              <option
-                key={option.value}
-                value={option.value}
-                defaultValue={1}
-              >
+              <option key={option.value} value={option.value} defaultValue={1}>
                 {option.label}
               </option>
             ))}

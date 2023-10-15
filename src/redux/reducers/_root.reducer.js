@@ -1,14 +1,14 @@
-import { combineReducers } from 'redux';
-import errors from './errors.reducer';
-import user from './user.reducer';
-import kanji from './kanji.reducer';
-import status from './status.reducer';
-import meanings from './meanings.reducer';
-import kun from  './kun.reducer';
-import on from  './on.reducer';
-import words from  './words.reducer';
-import studyNotes from './studyNotes.reducer'
-import all from  './all.reducer';
+import { combineReducers } from "redux";
+import errors from "./errors.reducer";
+import user from "./user.reducer";
+import kanji from "./kanji.reducer";
+import status from "./status.reducer";
+import meanings from "./meanings.reducer";
+import kun from "./kun.reducer";
+import on from "./on.reducer";
+import words from "./words.reducer";
+import studyNotes from "./studyNotes.reducer";
+import all from "./all.reducer";
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.

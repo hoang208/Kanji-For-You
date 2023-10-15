@@ -5,8 +5,8 @@
   height: 100vh;
 }
 
-.aboutContainer .heroSection:last-child{
-    border-bottom: none;
+.aboutContainer .heroSection:last-child {
+  border-bottom: none;
 }
 
 .heroSection {
@@ -29,8 +29,8 @@
 }
 
 .heroTitle.right {
-    padding-left: 6rem;
-  }
+  padding-left: 6rem;
+}
 
 .heroTitle h1 {
   font-size: 4rem;

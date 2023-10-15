@@ -6,8 +6,8 @@ function LandingPage() {
   const history = useHistory();
 
   const handleRegister = () => {
-    history.push('/registration')
-  }
+    history.push("/registration");
+  };
 
   return (
     <div className="welcomeContainer">

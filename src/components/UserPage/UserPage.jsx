@@ -4,10 +4,10 @@ import "./UserPage.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function UserPage() {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useHistory();
 
-  const kanji = useSelector(store=>store.kanji)
+  const kanji = useSelector((store) => store.kanji);
 
   const handleCollection = () => {
     history.push(`/collection`);
@@ -47,7 +47,12 @@ const dispatch = useDispatch();
       <h2>Welcome, {user.username}!</h2>
       <p>
         Keep track of all the kanji you have learned in your own personal
-        collection. <br></br>Easily search up any <a href="https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji">jōyō</a> kanji in the dictionary!
+        collection. <br />
+        Easily search up any{" "}
+        <a href="https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji">
+          jōyō
+        </a>{" "}
+        kanji in the dictionary!
       </p>
       <p>
         Are you setup to learn japanese?{" "}

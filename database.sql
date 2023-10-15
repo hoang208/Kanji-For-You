@@ -1,9 +1,3 @@
-
--- USER is a reserved keyword with Postgres
--- You must use double quotes in every query that user is in:
--- ex. SELECT * FROM "user";
--- Otherwise you will have errors!
-
 -- MUST SET DATABASE ENCODING TO UTF-8 OR SOMETHING THAT SUPPORTS JAPANESE LANGUAGE
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
@@ -23,7 +17,5 @@ CREATE TABLE "collection" (
   "status_id" INT REFERENCES "status" NOT NULL　DEFAULT 1,
   "study_notes" VARCHAR (1000) DEFAULT ''
 );
-
-
 
 INSERT INTO "status" ("status") VALUES ('Not Learned'),('Plan to Learn'),('Learning'),('Learned');
