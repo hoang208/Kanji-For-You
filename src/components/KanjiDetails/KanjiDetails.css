@@ -159,6 +159,10 @@
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
 
+.statusForm .form {
+  color: black;
+}
+
 .statusFormContainer form {
   background-color: white;
   box-shadow: none;
@@ -248,3 +252,4 @@
   color: black;
   background-color: white;
 }
+

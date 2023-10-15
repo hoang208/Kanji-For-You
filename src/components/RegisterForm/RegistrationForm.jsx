@@ -33,7 +33,7 @@ function RegisterForm() {
   }; // end registerUser
 
   return (
-    <form className="form formPanel" onSubmit={registerUser}>
+    <form className="form" onSubmit={registerUser}>
       <h2>Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
