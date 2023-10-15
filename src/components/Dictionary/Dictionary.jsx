@@ -2,59 +2,61 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DictionaryItem from "./DictionaryItem";
 import "./Dictionary.css";
-import { useHistory} from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Dictionary() {
-const dispatch = useDispatch();
-const history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-const kanji = useSelector(store=>store.kanji)
+  const kanji = useSelector((store) => store.kanji);
 
-const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
 
-let searchHandler = (event) => {
-  //convert search text to lower case
-  const lowerCase = event.target.value.toLowerCase();
-  setSearchText(lowerCase);
-};
+  let searchHandler = (event) => {
+    //convert search text to lower case
+    const lowerCase = event.target.value.toLowerCase();
+    setSearchText(lowerCase);
+  };
 
-const filteredKanji = kanji.filter((kanjiletter) => {
-  //if no search then return the original
-  if (searchText === '') {
+  const filteredKanji = kanji.filter((kanjiletter) => {
+    //if no search then return the original
+    if (searchText === "") {
       return kanjiletter;
-  }
-  //return item which contains search
-  else {
-      return kanjiletter && kanjiletter.toLowerCase().includes(searchText)
-  }
-})
+    }
+    //return item which contains search
+    else {
+      return kanjiletter && kanjiletter.toLowerCase().includes(searchText);
+    }
+  });
 
-const handleLoad = () => {
+  const handleLoad = () => {
     history.push(`/dictionary/40`);
   };
 
-
-useEffect(() => {
+  useEffect(() => {
     dispatch({ type: "GET_KANJI" });
   }, []);
 
-return(
+  return (
     <div className="dictionaryContainer">
-        <div className="search">
-        <input type="text" className="searchInput" onChange={searchHandler} placeholder="Search Kanji..."></input>
-        </div>
-        <div className="cardWrapper">
+      <div className="search">
+        <input
+          type="text"
+          className="searchInput"
+          onChange={searchHandler}
+          placeholder="Search Kanji..."
+        ></input>
+      </div>
+      <div className="cardWrapper">
         {filteredKanji.slice(0, 20).map((kanjiletter) => (
-          <DictionaryItem
-            key={kanjiletter}
-            kanji={kanjiletter}
-          />
+          <DictionaryItem key={kanjiletter} kanji={kanjiletter} />
         ))}
-        </div>
-        <div className="search">
-            <button className="button load" onClick={handleLoad}>Load More Kanji</button>
-        </div>
+      </div>
+      <div className="search">
+        <button className="button load" onClick={handleLoad}>
+          Load More Kanji
+        </button>
+      </div>
     </div>
-)
-
+  );
 }

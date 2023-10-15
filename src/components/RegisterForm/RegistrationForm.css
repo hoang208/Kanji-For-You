@@ -1,8 +1,8 @@
-span{
-    font-size: 12px;
-    padding: 3px;
-    color: red;
-    display: none;
+span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
 }
 
 input:invalid[focused="true"] {

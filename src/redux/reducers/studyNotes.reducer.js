@@ -1,11 +1,10 @@
 const studyNotes = (state = [], action) => {
-    switch (action.type) {
-      case 'SET_NOTES':
-        return action.payload;
-      default:
-        return state;
-    }
-  };
-  
-  export default studyNotes;
-  
+  switch (action.type) {
+    case "SET_NOTES":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default studyNotes;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ("./BackToTopButton.css")
+import("./BackToTopButton.css");
 
 export default function BackToTopButton() {
   const [backToTopButton, setBackToTopButton] = useState(false);
@@ -22,6 +22,12 @@ export default function BackToTopButton() {
   };
 
   return (
-    <div className="App">{backToTopButton && <button className="button backTop" onClick={scrollUp}>⬆</button>}</div>
+    <div className="App">
+      {backToTopButton && (
+        <button className="button backTop" onClick={scrollUp}>
+          ⬆
+        </button>
+      )}
+    </div>
   );
 }

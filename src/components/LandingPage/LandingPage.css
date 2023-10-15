@@ -1,15 +1,15 @@
-.subHeader{
+.subHeader {
   font-weight: bold;
 }
 
-.welcomeContainer{
- display: flex;
- flex-direction: column;
- width: 100%;
- height: 100vh;
+.welcomeContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
 }
 
-.welcomeContainer h1{
+.welcomeContainer h1 {
   text-align: center;
   font-size: 5rem;
   padding: 2rem;

@@ -45,9 +45,10 @@
   padding: 1rem;
   font-size: 10rem;
   text-align: center;
-  background-color: white;
+  background-color: transparent;
   border-radius: 0.5rem;
-  color: black;
+  color: white;
+  box-shadow: 0 2px 20px #e1e5ee;
 }
 
 .details {
@@ -243,13 +244,12 @@
   overflow-y: scroll;
 }
 
-.edit{
+.edit {
   color: white;
-  border: 2px solid white
+  border: 2px solid white;
 }
 
-.edit:hover{
+.edit:hover {
   color: black;
   background-color: white;
 }
-

@@ -1,19 +1,20 @@
-import { all, takeEvery } from 'redux-saga/effects';
-import loginSaga from './login.saga';
-import registrationSaga from './registration.saga';
-import userSaga from './user.saga';
-import kanjiSaga from './kanji.saga';
-import postKanji from './postKanji.saga';
-import getStatus from './getStatus.saga';
-import getMeanings from './getMeanings.saga';
-import getKun from './getKun.saga';
-import getOn from './getOn.saga';
-import getWords from './getWords.saga';
-import getNotes from './getNotes.saga';
-import putStatus from './putStatus.saga';
-import putNotes from './putNotes.saga';
-import deleteNotes from './deleteNotes.saga';
-import getAll from './getAll.saga';
+import { all, takeEvery } from "redux-saga/effects";
+import loginSaga from "./login.saga";
+import registrationSaga from "./registration.saga";
+import userSaga from "./user.saga";
+import kanjiSaga from "./kanji.saga";
+import postKanji from "./postKanji.saga";
+import getStatus from "./getStatus.saga";
+import getMeanings from "./getMeanings.saga";
+import getKun from "./getKun.saga";
+import getOn from "./getOn.saga";
+import getWords from "./getWords.saga";
+import getNotes from "./getNotes.saga";
+import putStatus from "./putStatus.saga";
+import putNotes from "./putNotes.saga";
+import deleteNotes from "./deleteNotes.saga";
+import getAll from "./getAll.saga";
+import getCount from "./getCount.saga"
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -39,5 +40,6 @@ export default function* rootSaga() {
     takeEvery("UPDATE_NOTES", putNotes),
     takeEvery("DELETE_NOTES", deleteNotes),
     takeEvery("GET_ALL", getAll),
+    takeEvery("GET_COUNT", getCount),
   ]);
 }

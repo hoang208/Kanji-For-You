@@ -1,8 +1,8 @@
 .buttonGroup button {
   background-color: transparent;
-  border: 2px solid white; 
-  padding: 1rem; 
-  cursor: pointer; 
+  border: 2px solid white;
+  padding: 1rem;
+  cursor: pointer;
   float: left;
   width: 100%;
   color: white;
@@ -19,8 +19,7 @@
 
 .buttonGroup button:last-child {
   border-radius: 0 0.25rem 0.25rem 0;
-} 
-
+}
 
 .buttonGroup button:hover {
   background-color: rgba(0, 0, 0, 0.2);
@@ -47,9 +46,9 @@
   margin: auto 2rem;
 }
 
-.collectionBorder{
-    margin: 3rem;
-    border-radius: 0.2rem;
+.collectionBorder {
+  margin: 3rem;
+  border-radius: 0.2rem;
 }
 
 .collectionTitle {

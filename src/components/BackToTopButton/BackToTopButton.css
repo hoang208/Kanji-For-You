@@ -1,16 +1,16 @@
-.backTop{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: fit-content;
-    height: fit-content;
-    font-size: 3rem;
-    background-color: transparent;
-    border: none;
-    color: white;
+.backTop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
+  color: white;
 }
 
-.backTop:hover{
-    background-color: transparent;
-    color: #DF0000;
+.backTop:hover {
+  background-color: transparent;
+  color: #df0000;
 }

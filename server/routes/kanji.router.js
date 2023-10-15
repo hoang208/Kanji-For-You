@@ -21,30 +21,32 @@ router.get("/", (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   const client = await pool.connect();
-  
+
   try {
     const kanjis = req.body.kanji;
 
-      await Promise.all(kanjis.map(kanji => {
-          const insertLineItemText =  `INSERT INTO collection ("kanji", "user_id")
+    await Promise.all(
+      kanjis.map((kanji) => {
+        const insertLineItemText = `INSERT INTO collection ("kanji", "user_id")
           VALUES (
               $1, $2
           )
               ;`;
-          const insertLineItemValues = [kanji, req.user.id];
-          return client.query(insertLineItemText, insertLineItemValues);
-      }));
+        const insertLineItemValues = [kanji, req.user.id];
+        return client.query(insertLineItemText, insertLineItemValues);
+      })
+    );
 
-      await client.query('COMMIT')
-      res.sendStatus(201);
+    await client.query("COMMIT");
+    res.sendStatus(201);
   } catch (error) {
-      await client.query('ROLLBACK')
-      console.log('Error POST /api/kanji', error);
-      res.sendStatus(500);
+    await client.query("ROLLBACK");
+    console.log("Error POST /api/kanji", error);
+    res.sendStatus(500);
   } finally {
-      client.release()
+    client.release();
   }
 });
 

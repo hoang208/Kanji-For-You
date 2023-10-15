@@ -1,10 +1,10 @@
-const all = (state = [], action) => {
+const count = (state = [], action) => {
   switch (action.type) {
-    case "SET_ALL":
+    case "SET_COUNT":
       return action.payload;
     default:
       return state;
   }
 };
 
-export default all;
+export default count

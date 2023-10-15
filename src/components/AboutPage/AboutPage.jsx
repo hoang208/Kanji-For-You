@@ -1,6 +1,5 @@
 import React from "react";
 import "./AboutPage.css";
-import RegisterForm from "../RegisterForm/RegistrationForm";
 
 function AboutPage() {
   return (
