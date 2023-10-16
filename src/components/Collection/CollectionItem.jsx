@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function CollectionItem(props) {
   const history = useHistory();
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const options = [
     { label: "Not Learned", value: 1 },
@@ -12,12 +12,11 @@ const dispatch = useDispatch();
     { label: "Learned", value: 4 },
   ];
 
-
   const handleSelectChange = (event) => {
     event.preventDefault();
     dispatch({
       type: "UPDATE_STATUS",
-      payload: { status_id: event.target.value,  kanji: props.kanji,}
+      payload: { status_id: event.target.value, kanji: props.kanji },
     });
   };
 

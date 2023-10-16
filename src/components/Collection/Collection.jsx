@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import "./Collection.css";
 import { useDispatch, useSelector } from "react-redux";
 import CollectionItem from "./CollectionItem";
-import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  useHistory,
+  useParams,
+} from "react-router-dom/cjs/react-router-dom.min";
 import CollectionTableItem from "./CollectionTableItem";
 
 export default function Collection() {
@@ -12,8 +15,8 @@ export default function Collection() {
 
   const all = useSelector((store) => store.all);
 
-  const count = params.count ? params.count : 20;
-  const newCount = parseInt(count) + 20;
+  const count = params.count ? params.count : 30;
+  const newCount = parseInt(count) + 30;
 
   useEffect(() => {
     dispatch({ type: "GET_ALL" });
@@ -152,25 +155,31 @@ export default function Collection() {
       {tableView ? (
         <div className="tableContainer">
           <div className="tableWrapper">
-        <table className="table">
-          <thead className="tableHeader">
-            <tr>
-              <th><h1>Kanji</h1></th>
-              <th><h1>Status</h1></th>
-              <th><h1>View</h1></th>
-            </tr>
-          </thead>
-          <tbody className="tableBody">
-            {filteredItems.map((item) => (
-              <CollectionTableItem
-                key={item.id}
-                kanji={item.kanji}
-                status={item.status}
-              />
-            ))}
-          </tbody>
-        </table>
-        </div>
+            <table className="table">
+              <thead className="tableHeader">
+                <tr>
+                  <th>
+                    <h1>Kanji</h1>
+                  </th>
+                  <th>
+                    <h1>Status</h1>
+                  </th>
+                  <th>
+                    <h1>View</h1>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="tableBody">
+                {filteredItems.map((item) => (
+                  <CollectionTableItem
+                    key={item.id}
+                    kanji={item.kanji}
+                    status={item.status}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ) : (
         <>
@@ -184,10 +193,10 @@ export default function Collection() {
             ))}
           </div>
           <div className="search">
-        <button className="button load" onClick={handleLoad}>
-          Load More Kanji
-        </button>
-      </div>
+            <button className="button load" onClick={handleLoad}>
+              Load More Kanji
+            </button>
+          </div>
         </>
       )}
     </div>

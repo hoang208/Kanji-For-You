@@ -13,12 +13,11 @@ export default function CollectionTableItem(props) {
     { label: "Learned", value: 4 },
   ];
 
-
   const handleSelectChange = (event) => {
     event.preventDefault();
     dispatch({
       type: "UPDATE_STATUS",
-      payload: { status_id: event.target.value,  kanji: props.kanji,}
+      payload: { status_id: event.target.value, kanji: props.kanji },
     });
   };
 
@@ -28,7 +27,9 @@ export default function CollectionTableItem(props) {
 
   return (
     <tr className={props.status}>
-      <td><h1>{props.kanji}</h1></td>
+      <td>
+        <h1>{props.kanji}</h1>
+      </td>
       <td>
         {" "}
         <select className="select" onChange={handleSelectChange}>
@@ -45,7 +46,7 @@ export default function CollectionTableItem(props) {
       </td>
       <td>
         <button className="button" onClick={kanjiClicked}>
-            View Kanji
+          View Kanji
         </button>
       </td>
     </tr>
