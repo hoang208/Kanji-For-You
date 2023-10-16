@@ -148,3 +148,27 @@ td {
   font-size: 1.5em;
   font-weight: bold;
 }
+
+.cardBody option {
+  min-width: 5rem;
+}
+
+.table p {
+  max-width: 100%;
+  max-height: 100px;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.table h1 {
+  margin: 1rem;
+}
+
+.table td {
+ min-width: 200px;
+}
+
+.table td h1 {
+  font-size: 3rem;
+}
