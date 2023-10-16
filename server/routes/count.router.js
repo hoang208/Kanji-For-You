@@ -8,11 +8,12 @@ router.get("/", (req, res) => {
   FROM "collection"
   JOIN "user" ON "user"."id"="collection"."user_id"
   JOIN "status" ON "status"."id"="collection"."status_id"
+  WHERE "user_id" = $1 
   GROUP BY "status"."id", "status"."status"
   ORDER BY "status"."id"
   ;`;
   pool
-    .query(query)
+    .query(query, [req.user.id])
     .then((result) => {
       res.send(result.rows);
     })
