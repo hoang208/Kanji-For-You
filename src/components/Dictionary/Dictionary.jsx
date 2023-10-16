@@ -11,8 +11,8 @@ export default function Dictionary() {
 
   const kanji = useSelector((store) => store.kanji);
 
-  const count = params.count ? params.count : 20;
-  const newCount = parseInt(count) + 20;
+  const count = params.count ? params.count : 30;
+  const newCount = parseInt(count) + 30;
 
   const [searchText, setSearchText] = useState("");
 

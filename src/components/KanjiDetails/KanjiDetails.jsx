@@ -136,7 +136,7 @@ export default function KanjiDetails() {
           <StatusForm setFormOpen={setFormOpen} kanji={kanji} />,
           document.body
         )}
-        {confimartionOpen &&
+      {confimartionOpen &&
         createPortal(
           <DeleteModal setConfimarionOpen={setConfimarionOpen} kanji={kanji} />,
           document.body
