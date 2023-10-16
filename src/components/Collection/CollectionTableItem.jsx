@@ -45,6 +45,9 @@ export default function CollectionTableItem(props) {
         </select>
       </td>
       <td>
+        <p>{props.notes}</p>
+      </td>
+      <td>
         <button className="button" onClick={kanjiClicked}>
           View Kanji
         </button>

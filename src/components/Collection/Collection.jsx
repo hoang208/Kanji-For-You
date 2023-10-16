@@ -165,6 +165,9 @@ export default function Collection() {
                     <h1>Status</h1>
                   </th>
                   <th>
+                    <h1>Study Note</h1>
+                  </th>
+                  <th>
                     <h1>View</h1>
                   </th>
                 </tr>
@@ -175,6 +178,7 @@ export default function Collection() {
                     key={item.id}
                     kanji={item.kanji}
                     status={item.status}
+                    notes={item.study_notes}
                   />
                 ))}
               </tbody>
