@@ -27,6 +27,7 @@ import Collection from "../Collection/Collection";
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
 import Stats from "../Stats/Stats";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import Footer from "../Footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -137,6 +138,7 @@ function App() {
           </Route>
         </Switch>
         <BackToTopButton />
+        <Footer/>
       </div>
     </Router>
   );
