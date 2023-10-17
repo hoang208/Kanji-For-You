@@ -173,14 +173,22 @@ export default function Collection() {
                 </tr>
               </thead>
               <tbody className="tableBody">
-                {filteredItems.map((item) => (
-                  <CollectionTableItem
-                    key={item.id}
-                    kanji={item.kanji}
-                    status={item.status}
-                    notes={item.study_notes}
-                  />
-                ))}
+                {filteredItems.length ? (
+                  <>
+                    {filteredItems.map((item) => (
+                      <CollectionTableItem
+                        key={item.id}
+                        kanji={item.kanji}
+                        status={item.status}
+                        notes={item.study_notes}
+                      />
+                    ))}
+                  </>
+                ) : (
+                  <tr>
+                    <td colSpan="4">No Kanji  with this status available</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
@@ -188,19 +196,28 @@ export default function Collection() {
       ) : (
         <>
           <div className="cardWrapper">
-            {filteredItems.slice(0, count).map((item) => (
-              <CollectionItem
-                key={item.id}
-                kanji={item.kanji}
-                status={item.status}
-              />
-            ))}
+            {filteredItems.length ? (
+              <>
+                {filteredItems.slice(0, count).map((item) => (
+                  <CollectionItem
+                    key={item.id}
+                    kanji={item.kanji}
+                    status={item.status}
+                  />
+                ))}
+              </>
+            ) : (
+              <div className="errorContainer">
+                <p>No Kanji  with this status available</p>
+              </div>
+            )}
           </div>
+          {filteredItems.length ? (
           <div className="search">
             <button className="button load" onClick={handleLoad}>
               Load More Kanji
             </button>
-          </div>
+          </div>) : ('')}
         </>
       )}
     </div>

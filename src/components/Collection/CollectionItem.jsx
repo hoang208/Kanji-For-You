@@ -25,8 +25,8 @@ export default function CollectionItem(props) {
   };
 
   return (
-    <div className={`card`}>
-      <div className={`cardBody`}>
+    <div className="card">
+      <div className="cardBody">
         <h1 className="cardTitle">{props.kanji}</h1>
         <select className="select" onChange={handleSelectChange}>
           {options.map((option) => (

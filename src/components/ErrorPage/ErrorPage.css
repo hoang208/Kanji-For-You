@@ -1,5 +1,5 @@
 .errorContainer {
-  height: 100vh;
+  height: 85vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,6 +15,7 @@
 .errorContainer p {
   padding: 2rem;
   font-size: 2rem;
+  white-space: nowrap;
 }
 
 .errorContainer button {
