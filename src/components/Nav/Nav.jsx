@@ -59,6 +59,11 @@ function Nav() {
               </Link>
             </li>
             <li>
+              <Link className="navLink" to="/study">
+                Study
+              </Link>
+            </li>
+            <li>
               <Link className="navLink" to="/about">
                 About
               </Link>

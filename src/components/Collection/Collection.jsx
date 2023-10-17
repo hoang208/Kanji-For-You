@@ -173,14 +173,17 @@ export default function Collection() {
                 </tr>
               </thead>
               <tbody className="tableBody">
-                {filteredItems.map((item) => (
+                {filterItems.length ? ( 
+                  <>
+                  {filteredItems.map((item) => (
                   <CollectionTableItem
                     key={item.id}
                     kanji={item.kanji}
                     status={item.status}
                     notes={item.study_notes}
                   />
-                ))}
+                ))}</>):(<tr><td>No Kanji availble</td></tr>)}
+               
               </tbody>
             </table>
           </div>

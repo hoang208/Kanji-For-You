@@ -52,7 +52,7 @@ export default function KanjiDetails() {
           </div>
           <div className="detailsInfo">
             {meanings.map((meaning) => (
-              <p className="details meaning" key={meaning} disabled>
+              <p className="details meaning" key={meaning}>
                 {meaning}
               </p>
             ))}
@@ -64,7 +64,7 @@ export default function KanjiDetails() {
           </div>
           <div className="detailsInfo">
             {kun.map((reading) => (
-              <p className="details kun" key={reading} disabled>
+              <p className="details kun" key={reading}>
                 {reading}
               </p>
             ))}
@@ -77,7 +77,7 @@ export default function KanjiDetails() {
           <div className="detailsInfo">
             {" "}
             {on.map((reading) => (
-              <p className="details on" key={reading} disabled>
+              <p className="details on" key={reading}>
                 {reading}
               </p>
             ))}

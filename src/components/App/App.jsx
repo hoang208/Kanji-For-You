@@ -28,6 +28,8 @@ import BackToTopButton from "../BackToTopButton/BackToTopButton";
 import Stats from "../Stats/Stats";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Footer from "../Footer/Footer";
+import StudyPage from "../StudyPage/StudyPage";
+import StudyStart from "../StudyPage/StudyStart";
 
 function App() {
   const dispatch = useDispatch();
@@ -130,6 +132,14 @@ function App() {
 
           <ProtectedRoute path="/stats">
             <Stats />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/study">
+            <StudyStart />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/study/flashcard">
+            <StudyPage />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
