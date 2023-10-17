@@ -34,7 +34,7 @@ img {
 
 .container {
   padding: 20px;
-  height: 75vh;
+  height: 85vh;
 }
 
 a {
@@ -55,11 +55,10 @@ a:hover {
   font-size: 0.8rem;
 }
 
-h1{
+h1 {
   line-height: 1.2;
-  letter-spacing: -0.2rem;
 }
 
-p{
+p {
   line-height: 1.5;
 }

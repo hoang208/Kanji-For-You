@@ -186,7 +186,7 @@ export default function Collection() {
                   </>
                 ) : (
                   <tr>
-                    <td colSpan="4">No Kanji  with this status available</td>
+                    <td colSpan="4">No Kanji with this status available</td>
                   </tr>
                 )}
               </tbody>
@@ -208,16 +208,19 @@ export default function Collection() {
               </>
             ) : (
               <div className="errorContainer">
-                <p>No Kanji  with this status available</p>
+                <p>No Kanji with this status available</p>
               </div>
             )}
           </div>
           {filteredItems.length ? (
-          <div className="search">
-            <button className="button load" onClick={handleLoad}>
-              Load More Kanji
-            </button>
-          </div>) : ('')}
+            <div className="search">
+              <button className="button load" onClick={handleLoad}>
+                Load More Kanji
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
         </>
       )}
     </div>

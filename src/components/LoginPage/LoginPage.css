@@ -8,5 +8,5 @@
     "content1 content2 content2"
     "content1 form content3"
     "content4 content5 content6";
-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
 }

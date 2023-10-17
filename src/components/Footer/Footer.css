@@ -1,12 +1,12 @@
 footer {
-      clear: both;
-    position: relative;
-    height: 200px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-    height: 2.5rem;
-    width: 100%;
-  }
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  height: 2.5rem;
+  width: 100%;
+}

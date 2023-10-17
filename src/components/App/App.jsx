@@ -148,7 +148,7 @@ function App() {
           </Route>
         </Switch>
         <BackToTopButton />
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );
