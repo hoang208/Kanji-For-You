@@ -8,4 +8,4 @@ const count = (state = [], action) => {
   }
 };
 
-export default count
+export default count;

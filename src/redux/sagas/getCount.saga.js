@@ -1,7 +1,5 @@
 import axios from "axios";
 import { put } from "redux-saga/effects";
-;
-
 function* getCount() {
   //Get count of each status
   try {
@@ -13,4 +11,4 @@ function* getCount() {
   }
 }
 
-export default getCount
+export default getCount;

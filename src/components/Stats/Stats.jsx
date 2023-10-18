@@ -82,9 +82,9 @@ export default function Stats() {
                   datalabels: {
                     color: "white",
                     font: {
-                      weight: 'bold',
+                      weight: "bold",
                       size: 24,
-                    }
+                    },
                   },
                 },
               }}
@@ -94,7 +94,7 @@ export default function Stats() {
       </div>
       <div className="heroSection">
         <div className="heroBox">
-          <div className="heroContent" style={{height:"50vh"}}>
+          <div className="heroContent" style={{ height: "50vh" }}>
             <Pie
               data={data}
               plugins={[ChartDataLabels]}
@@ -116,9 +116,9 @@ export default function Stats() {
                     },
                     color: "#fff",
                     font: {
-                      weight: 'bold',
+                      weight: "bold",
                       size: 24,
-                    }
+                    },
                   },
                 },
               }}
