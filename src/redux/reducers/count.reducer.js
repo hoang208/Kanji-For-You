@@ -1,4 +1,5 @@
 const count = (state = [], action) => {
+  //Count of each status
   switch (action.type) {
     case "SET_COUNT":
       return action.payload;
@@ -7,4 +8,4 @@ const count = (state = [], action) => {
   }
 };
 
-export default count
+export default count;

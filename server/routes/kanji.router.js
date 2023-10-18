@@ -4,6 +4,7 @@ const { default: axios } = require("axios");
 const router = express.Router();
 
 router.get("/", (req, res) => {
+  //API call
   if (req.isAuthenticated()) {
     axios({
       method: "GET",
@@ -26,7 +27,7 @@ router.post("/", async (req, res) => {
 
   try {
     const kanjis = req.body.kanji;
-
+    //map over all kanji and adds each one to database
     await Promise.all(
       kanjis.map((kanji) => {
         const insertLineItemText = `INSERT INTO collection ("kanji", "user_id")
@@ -58,6 +59,7 @@ router.put("/:kanji", (req, res) => {
     console.log("user", req.user);
     console.log(req.body.notes);
 
+    //Updates study notes to what user wrote
     let queryText = `UPDATE "collection" SET "study_notes" = $1 WHERE "kanji" = $2 AND "user_id"= $3`;
 
     pool

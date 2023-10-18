@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import("./BackToTopButton.css");
 
 export default function BackToTopButton() {
+  //Back to top button state
   const [backToTopButton, setBackToTopButton] = useState(false);
 
+  //Set back to top button state based on scroll
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -14,6 +16,7 @@ export default function BackToTopButton() {
     });
   }, []);
 
+  //Scroll back up to the top
   const scrollUp = () => {
     window.scrollTo({
       top: 0,

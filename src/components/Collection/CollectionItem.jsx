@@ -5,6 +5,7 @@ export default function CollectionItem(props) {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  //Options in select
   const options = [
     { label: "Not Learned", value: 1 },
     { label: "Plan to Learn", value: 2 },
@@ -12,6 +13,7 @@ export default function CollectionItem(props) {
     { label: "Learned", value: 4 },
   ];
 
+  //Updates status
   const handleSelectChange = (event) => {
     event.preventDefault();
     dispatch({
@@ -20,6 +22,7 @@ export default function CollectionItem(props) {
     });
   };
 
+  //Sends user to details page for that kanji
   const kanjiClicked = () => {
     history.push(`/kanji/${props.kanji}`);
   };

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import "./LandingPage.css";
 
 function LandingPage() {
   const history = useHistory();
 
+  //Sends users to registration page
   const handleRegister = () => {
     history.push("/registration");
   };
@@ -20,16 +21,16 @@ function LandingPage() {
             </div>
             <div className="heroContent">
               <p>
-                Kanji For You is a website meant to aid users in their journey
-                to learn Japanese Kanji. <br />
-                The website serves as a Kanji dictionary for users. Users can
-                search up a certain kanji. Information about the Kanji will be
-                displayed such as meaning, readings, and example words that use
-                the kanji. <br />
-                Additionally, users can add Kanji to their collection and mark
-                their learning status for that particular kanji. <br />
-                This allows users to keep track of all the Kanji they are
-                learning or have learned. <br />
+                Kanji For You is a website meant to aid you in your journey to
+                learn Japanese Kanji. <br />
+                The website serves as a Kanji dictionary. You can search up any
+                jōyō kanji. Information about the Kanji will be displayed such
+                as meaning, readings, and example words that use the kanji.{" "}
+                <br />
+                Additionally, you can add Kanji to your collection and mark the
+                learning status for that particular kanji. <br />
+                This allows you to keep track of all the Kanji you are learning
+                or have learned. <br />
                 Kanji For You uses{" "}
                 <a href="https://kanjiapi.dev/">kanjiapi.dev</a>, an amazing api
                 that provides information for over 13,000 kanji.

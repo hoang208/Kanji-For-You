@@ -2,6 +2,7 @@ import axios from "axios";
 import { put } from "redux-saga/effects";
 
 function* getOn(action) {
+  //Get on readings from API
   try {
     const details = yield axios.get(`/api/details/${action.payload}`);
     console.log("get all:", details.data);

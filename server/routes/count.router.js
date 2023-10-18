@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require("../modules/pool");
 
 router.get("/", (req, res) => {
+  //Get count of each status for that user
   const query = `
   SELECT "status"."id" as "id", "status"."status" as "status",  count(*)
   FROM "collection"
@@ -12,6 +13,7 @@ router.get("/", (req, res) => {
   GROUP BY "status"."id", "status"."status"
   ORDER BY "status"."id"
   ;`;
+
   pool
     .query(query, [req.user.id])
     .then((result) => {

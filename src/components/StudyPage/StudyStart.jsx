@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 export default function StudyStart() {
   const history = useHistory();
 
+  //Sends users to flashcard page
   const handleStudy = () => {
     history.push("/study/flashcard");
   };
@@ -17,14 +18,13 @@ export default function StudyStart() {
           <div className="heroContent">
             <p>
               Kanji For You's study section is meant to aid users in their
-              journye to learn kanji! <br />
-              Any kanji that has their status marked as learning will be abled
-              to be studied. <br />
-              The kanji marked as learning will be displayed randomly as
-              flashcards for the user to practice their knowledge of the kanji!
+              journey to learn kanji! <br />
+              You can study any kanji that you have marked as learning throught
+              the use of flashcards! <br />
+              The front of the flashcard will display the Kanji character.
               <br />
               The meanings and any study notes the user has written for the
-              kanji will be displayed on the back!
+              kanji will be displayed on the back.
             </p>
             <button className="button edit" onClick={handleStudy}>
               Start Studying!

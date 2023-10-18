@@ -4,6 +4,7 @@ const { default: axios } = require("axios");
 const router = express.Router();
 
 router.get("/:kanji", (req, res) => {
+  //API call
   let kanji = req.params["kanji"];
   const url = `https://kanjiapi.dev/v1/kanji/${kanji}`;
   const encodedURI = encodeURI(url);

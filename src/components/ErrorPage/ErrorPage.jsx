@@ -4,6 +4,7 @@ import "./ErrorPage.css";
 export default function ErrorPage() {
   const history = useHistory();
 
+  //Sends user to home page
   const handleGoHome = () => {
     history.push("/user");
   };

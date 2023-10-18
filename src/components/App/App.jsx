@@ -102,42 +102,44 @@ function App() {
             )}
           </Route>
 
+          {/* Dictionary Page */}
           <ProtectedRoute exact path="/dictionary">
             <Dictionary />
           </ProtectedRoute>
 
+          {/* Dicitonary load more */}
           <ProtectedRoute path="/dictionary/:count">
             <Dictionary />
           </ProtectedRoute>
-
+          {/* Kanji of Day Page */}
           <ProtectedRoute exact path="/kanjioftheday">
             <KanjiOfTheDay />
           </ProtectedRoute>
-
+          {/* Details for Kanji */}
           <ProtectedRoute exact path="/kanji/:kanji">
             <KanjiDetails />
           </ProtectedRoute>
-
+          {/* Details Edit */}
           <ProtectedRoute exact path="/kanji/:kanji/:change">
             <ChangeNotes />
           </ProtectedRoute>
-
+          {/* Collection Page */}
           <ProtectedRoute exact path="/collection">
             <Collection />
           </ProtectedRoute>
-
+          {/* Collection load more */}
           <ProtectedRoute path="/collection/:count">
             <Collection />
           </ProtectedRoute>
-
+          {/* Stats Page */}
           <ProtectedRoute path="/stats">
             <Stats />
           </ProtectedRoute>
-
+          {/* Study Page */}
           <ProtectedRoute exact path="/study">
             <StudyStart />
           </ProtectedRoute>
-
+          {/* Flashcard Page */}
           <ProtectedRoute exact path="/study/flashcard">
             <StudyPage />
           </ProtectedRoute>
@@ -148,7 +150,7 @@ function App() {
           </Route>
         </Switch>
         <BackToTopButton />
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

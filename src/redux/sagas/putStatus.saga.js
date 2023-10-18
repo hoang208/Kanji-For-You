@@ -2,7 +2,7 @@ import axios from "axios";
 import { put } from "redux-saga/effects";
 
 function* putStatus(action) {
-  // get collection for specific kanji from database
+  //Update status in collection API for that kanji
   try {
     const collection = yield axios.put(
       `/api/collection/${action.payload.kanji}`,

@@ -1,5 +1,4 @@
 import {
-  Link,
   useHistory,
   useParams,
 } from "react-router-dom/cjs/react-router-dom.min";
@@ -15,8 +14,10 @@ export default function ChangeNotes() {
   const params = useParams();
   const history = useHistory();
 
+  //Set modal state
   const [formOpen, setFormOpen] = useState(false);
 
+  //Data
   const meanings = useSelector((store) => store.meanings);
   const kun = useSelector((store) => store.kun);
   const on = useSelector((store) => store.on);
@@ -25,12 +26,11 @@ export default function ChangeNotes() {
   const notes = useSelector((store) => store.studyNotes);
   const kanji = params.kanji;
 
+  //Study note state
   const [noteToUpdate, setNoteToUpdate] = useState({
     notes: notes,
     kanji: kanji,
   });
-
-  console.log("status", status);
 
   useEffect(() => {
     dispatch({ type: "GET_MEANINGS", payload: params.kanji });
@@ -41,10 +41,12 @@ export default function ChangeNotes() {
     dispatch({ type: "GET_NOTES", payload: params.kanji });
   }, []);
 
+  //Update study note state based on values
   const handleNotesChange = (event) => {
     setNoteToUpdate({ ...noteToUpdate, notes: event.target.value });
   };
 
+  //Dispatch for put and sends users back to details
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
@@ -54,8 +56,8 @@ export default function ChangeNotes() {
     history.push(`/kanji/${params.kanji}`);
   };
 
+  //Cancels the action and sends users back to details
   const handleCancel = () => {
-    console.log("cancel button pushed");
     history.push(`/kanji/${params.kanji}`);
   };
 

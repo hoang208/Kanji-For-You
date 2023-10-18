@@ -2,6 +2,7 @@ import axios from "axios";
 import { put } from "redux-saga/effects";
 
 function* deleteNotes(action) {
+  //Deletes study note for that Kanji
   try {
     const deleteNotes = yield axios.delete(
       `/api/collection/${action.payload.kanji}`,

@@ -166,9 +166,25 @@ td {
 }
 
 .table td {
- min-width: 200px;
+  min-width: 200px;
 }
 
 .table td h1 {
   font-size: 3rem;
+}
+
+.tooltipContainer {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.tooltip {
+  position: relative;
+  top: -75px;
+  left: 25px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.2rem;
 }

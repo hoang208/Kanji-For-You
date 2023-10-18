@@ -2,6 +2,7 @@ import axios from "axios";
 import { put } from "redux-saga/effects";
 
 function* getNotes(action) {
+  //Get study notes from collection database
   try {
     const collection = yield axios.get(`/api/collection/${action.payload}`);
     console.log("get all:", collection.data);

@@ -7,8 +7,10 @@ function UserPage() {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  //Data
   const kanji = useSelector((store) => store.kanji);
 
+  //Sends users to page of whatever button they clicked
   const handleCollection = () => {
     history.push(`/collection`);
   };
@@ -31,6 +33,7 @@ function UserPage() {
     });
   }, []);
 
+  //Sends kanji got from API to be stored in database
   useEffect(() => {
     dispatch({
       type: "POST_KANJI",

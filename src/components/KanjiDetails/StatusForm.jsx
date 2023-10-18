@@ -4,11 +4,13 @@ import { useDispatch } from "react-redux";
 export default function StatusForm({ setFormOpen, kanji }) {
   const dispatch = useDispatch();
 
+  //Status state
   const [statusToUpdate, setStatusToUpdate] = useState({
     status_id: 1,
     kanji: kanji,
   });
 
+  //Options with each status
   const options = [
     { label: "Not Learned", value: 1 },
     { label: "Plan to Learn", value: 2 },
@@ -16,10 +18,12 @@ export default function StatusForm({ setFormOpen, kanji }) {
     { label: "Learned", value: 4 },
   ];
 
+  //Update state to reflect value of option
   const handleSelectChange = (event) => {
     setStatusToUpdate({ ...statusToUpdate, status_id: event.target.value });
   };
 
+  //Put dispatch and closes modal
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
@@ -29,6 +33,7 @@ export default function StatusForm({ setFormOpen, kanji }) {
     handleClose();
   };
 
+  //Closes modal
   const handleClose = () => {
     setFormOpen(false);
   };

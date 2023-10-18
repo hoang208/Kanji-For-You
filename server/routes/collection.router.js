@@ -8,6 +8,7 @@ router.get("/:kanji", (req, res) => {
     console.log("is authenticated?", req.isAuthenticated());
     console.log("user", req.user);
 
+    // Gets study notes and status for this particular kanji
     let queryText = `SELECT "kanji", "study_notes", "status"
     FROM "collection"
     JOIN "user" ON "user"."id"="collection"."user_id"

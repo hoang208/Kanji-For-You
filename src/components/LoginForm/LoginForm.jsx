@@ -10,6 +10,7 @@ function LoginForm() {
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
+  //Checks if username and password is valid
   const login = (event) => {
     event.preventDefault();
 

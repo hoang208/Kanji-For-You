@@ -7,14 +7,17 @@ import {
   useParams,
 } from "react-router-dom/cjs/react-router-dom.min";
 import CollectionTableItem from "./CollectionTableItem";
+import CollectionToolTip from "./CollectionToolTip";
 
 export default function Collection() {
   const dispatch = useDispatch();
   const history = useHistory();
   const params = useParams();
 
+  //Data
   const all = useSelector((store) => store.all);
 
+  //Set amount of cards on page based off params
   const count = params.count ? params.count : 30;
   const newCount = parseInt(count) + 30;
 
@@ -22,10 +25,14 @@ export default function Collection() {
     dispatch({ type: "GET_ALL" });
   }, []);
 
+  //Filter states
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredItems, setFilteredItems] = useState(all);
+
+  //Table view state
   const [tableView, setTableView] = useState(false);
 
+  //Filters
   let filters = ["Not Learned", "Plan to Learn", "Learning", "Learned"];
 
   //set filters on button click
@@ -63,14 +70,17 @@ export default function Collection() {
     }
   };
 
+  //Set count in params so display can be updated
   const handleLoad = () => {
     history.push(`/collection/${newCount}`);
   };
 
+  //Grid view click sets table view to false
   const handleGrid = () => {
     setTableView(false);
   };
 
+  //Table view click sets table view to true
   const handleTable = () => {
     setTableView(true);
   };
@@ -81,58 +91,29 @@ export default function Collection() {
         <div className="collectionBorder">
           <div className="collectionTitleFilter">
             <h1 className="collectionTitle">Collection</h1>
+            <CollectionToolTip text={"Click on the status to change it!"} />
             <div className="buttonGroup view">
               <button
                 className={`filter ${tableView ? "" : "active"}`}
                 onClick={handleGrid}
               >
-                <svg
-                  width="50px"
-                  height="20px"
-                  viewBox="0 0 15 15"
-                  stroke="white"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  className="material-symbols-outlined"
+                  style={{ color: "white" }}
                 >
-                  <path
-                    d="M5.5 0.5H1.5C0.947715 0.5 0.5 0.947715 0.5 1.5V5.5C0.5 6.05228 0.947715 6.5 1.5 6.5H5.5C6.05228 6.5 6.5 6.05228 6.5 5.5V1.5C6.5 0.947715 6.05228 0.5 5.5 0.5Z"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M13.5 0.5H9.5C8.94772 0.5 8.5 0.947715 8.5 1.5V5.5C8.5 6.05228 8.94772 6.5 9.5 6.5H13.5C14.0523 6.5 14.5 6.05228 14.5 5.5V1.5C14.5 0.947715 14.0523 0.5 13.5 0.5Z"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M13.5 8.5H9.5C8.94772 8.5 8.5 8.94772 8.5 9.5V13.5C8.5 14.0523 8.94772 14.5 9.5 14.5H13.5C14.0523 14.5 14.5 14.0523 14.5 13.5V9.5C14.5 8.94772 14.0523 8.5 13.5 8.5Z"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M5.5 8.5H1.5C0.947715 8.5 0.5 8.94772 0.5 9.5V13.5C0.5 14.0523 0.947715 14.5 1.5 14.5H5.5C6.05228 14.5 6.5 14.0523 6.5 13.5V9.5C6.5 8.94772 6.05228 8.5 5.5 8.5Z"
-                    stroke="#fff"
-                  />
-                </svg>
+                  grid_view
+                </span>
               </button>
               <button
                 className={`filter ${tableView ? "active" : ""}`}
                 onClick={handleTable}
               >
-                <svg
-                  width="50px"
-                  height="20px"
-                  viewBox="0 0 16 16"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                <span
+                  className="material-symbols-outlined"
+                  style={{ color: "white" }}
                 >
-                  <path fill="#fff" d="M0 0h4v3h-4v-3z"></path>
-                  <path fill="#fff" d="M0 4h4v3h-4v-3z"></path>
-                  <path fill="#fff" d="M0 12h4v3h-4v-3z"></path>
-                  <path fill="#fff" d="M0 8h4v3h-4v-3z"></path>
-                  <path fill="#fff" d="M5 0h11v3h-11v-3z"></path>
-                  <path fill="#fff" d="M5 4h11v3h-11v-3z"></path>
-                  <path fill="#fff" d="M5 12h11v3h-11v-3z"></path>
-                  <path fill="#fff" d="M5 8h11v3h-11v-3z"></path>
-                </svg>
+                  view_list
+                </span>
               </button>
             </div>
           </div>
@@ -186,7 +167,7 @@ export default function Collection() {
                   </>
                 ) : (
                   <tr>
-                    <td colSpan="4">No Kanji  with this status available</td>
+                    <td colSpan="4">No Kanji with this status available</td>
                   </tr>
                 )}
               </tbody>
@@ -194,6 +175,7 @@ export default function Collection() {
           </div>
         </div>
       ) : (
+        // View if user has not added any kanji to this status
         <>
           <div className="cardWrapper">
             {filteredItems.length ? (
@@ -208,16 +190,19 @@ export default function Collection() {
               </>
             ) : (
               <div className="errorContainer">
-                <p>No Kanji  with this status available</p>
+                <p>No Kanji with this status available</p>
               </div>
             )}
           </div>
           {filteredItems.length ? (
-          <div className="search">
-            <button className="button load" onClick={handleLoad}>
-              Load More Kanji
-            </button>
-          </div>) : ('')}
+            <div className="search">
+              <button className="button load" onClick={handleLoad}>
+                Load More Kanji
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
         </>
       )}
     </div>

@@ -8,18 +8,21 @@ function RegisterForm() {
   const [password, setPassword] = useState("");
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
-  const [usernameFocused, setUsernameFocused] = useState(false);
 
-  const handleUsernameFocus = (e) => {
+  //Focus state
+  const [usernameFocused, setUsernameFocused] = useState(false);
+  const [passwordFocused, setPasswordFocused] = useState(false);
+
+  //Set focus
+  const handleUsernameFocus = (event) => {
     setUsernameFocused(true);
   };
 
-  const [passwordFocused, setPasswordFocused] = useState(false);
-
-  const handlePasswordFocus = (e) => {
+  const handlePasswordFocus = (event) => {
     setPasswordFocused(true);
   };
 
+  //Sends users info to database
   const registerUser = (event) => {
     event.preventDefault();
 

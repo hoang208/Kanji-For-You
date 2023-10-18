@@ -6,8 +6,10 @@ export default function Flashcard(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  //Flip state
   const [flip, setFlip] = useState(false);
 
+  //Data
   const meanings = useSelector((store) => store.meanings);
 
   useEffect(() => {
@@ -18,6 +20,7 @@ export default function Flashcard(props) {
     dispatch({ type: "GET_ALL" });
   };
 
+  //Sends user to details page for kanji
   const kanjiClicked = () => {
     history.push(`/kanji/${props.kanji}`);
   };
@@ -50,7 +53,7 @@ export default function Flashcard(props) {
       </div>
       <div className="flashcardButtonGroup">
         <button className="cardBtn" onClick={kanjiClicked}>
-          Dictionary
+          View
         </button>
         <button className="button" onClick={handleNext}>
           Next

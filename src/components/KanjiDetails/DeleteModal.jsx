@@ -3,10 +3,12 @@ import { useDispatch } from "react-redux";
 export default function DeleteModal({ setConfimarionOpen, kanji }) {
   const dispatch = useDispatch();
 
+  //Closes modal
   const handleClose = () => {
     setConfimarionOpen(false);
   };
 
+  //Delete dispatch and closes modal
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
