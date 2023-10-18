@@ -7,6 +7,13 @@ function Nav() {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="nav">
       <ul>
