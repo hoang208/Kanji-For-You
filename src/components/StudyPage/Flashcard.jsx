@@ -50,7 +50,7 @@ export default function Flashcard(props) {
       </div>
       <div className="flashcardButtonGroup">
         <button className="cardBtn" onClick={kanjiClicked}>
-          Dictionary
+          View
         </button>
         <button className="button" onClick={handleNext}>
           Next

@@ -56,7 +56,7 @@ export default function Stats() {
   };
 
   return (
-    <div className="welcomeContainer">
+    <div className="aboutContainer">
       <div className="heroSection">
         <div className="heroBox">
           <div className="heroTitle left">
