@@ -5,6 +5,7 @@ export default function KanjiOfTheDayItem(props) {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  //Sends users to details page for kanji
   const kanjiClicked = () => {
     dispatch({
       type: "POST_KANJI",

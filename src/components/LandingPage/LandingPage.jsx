@@ -5,6 +5,7 @@ import "./LandingPage.css";
 function LandingPage() {
   const history = useHistory();
 
+  //Sends users to registration page
   const handleRegister = () => {
     history.push("/registration");
   };

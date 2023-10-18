@@ -14,7 +14,7 @@ import putStatus from "./putStatus.saga";
 import putNotes from "./putNotes.saga";
 import deleteNotes from "./deleteNotes.saga";
 import getAll from "./getAll.saga";
-import getCount from "./getCount.saga"
+import getCount from "./getCount.saga";
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.

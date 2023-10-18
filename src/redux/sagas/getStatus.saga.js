@@ -2,6 +2,7 @@ import axios from "axios";
 import { put } from "redux-saga/effects";
 
 function* getStatus(action) {
+  //Get status from collection databse
   try {
     const collection = yield axios.get(`/api/collection/${action.payload}`);
     console.log("get all:", collection.data);

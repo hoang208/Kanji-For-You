@@ -1,7 +1,10 @@
 import { useState } from "react";
 
-export default function CollectionToolTip({ text, children }) {
+export default function CollectionToolTip({ text }) {
+  //Tooltip visible status
   const [isVisible, setIsVisible] = useState(false);
+
+  //On hover, sets visible status to true
   return (
     <>
       <div className="tooltipContainer">

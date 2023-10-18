@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
     console.log("is authenticated?", req.isAuthenticated());
     console.log("user", req.user);
 
+    // Gets all information from database needed from collection
     let queryText = `SELECT "collection"."id" as "id", "kanji", "study_notes", "status"
       FROM "collection"
       JOIN "user" ON "user"."id"="collection"."user_id"

@@ -27,6 +27,8 @@ ChartJS.defaults.borderColor = "#FFF";
 
 export default function Stats() {
   const dispatch = useDispatch();
+
+  //Getting count per status
   const count = useSelector((store) => store.count);
   const status = count.map((statuses) => statuses.status);
   const countPerStatus = count.map((statuses) => parseInt(statuses.count));
@@ -35,6 +37,7 @@ export default function Stats() {
     dispatch({ type: "GET_COUNT" });
   }, []);
 
+  //Data for chart.js
   const data = {
     labels: status,
     datasets: [

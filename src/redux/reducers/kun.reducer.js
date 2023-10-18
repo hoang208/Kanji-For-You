@@ -1,4 +1,5 @@
 const kun = (state = [], action) => {
+  //Kun from API
   switch (action.type) {
     case "SET_KUN":
       return action.payload;

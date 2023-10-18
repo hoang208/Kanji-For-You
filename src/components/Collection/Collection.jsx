@@ -14,8 +14,10 @@ export default function Collection() {
   const history = useHistory();
   const params = useParams();
 
+  //Data
   const all = useSelector((store) => store.all);
 
+  //Set amount of cards on page based off params
   const count = params.count ? params.count : 30;
   const newCount = parseInt(count) + 30;
 
@@ -23,10 +25,14 @@ export default function Collection() {
     dispatch({ type: "GET_ALL" });
   }, []);
 
+  //Filter states
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredItems, setFilteredItems] = useState(all);
+
+  //Table view state
   const [tableView, setTableView] = useState(false);
 
+  //Filters
   let filters = ["Not Learned", "Plan to Learn", "Learning", "Learned"];
 
   //set filters on button click
@@ -64,14 +70,17 @@ export default function Collection() {
     }
   };
 
+  //Set count in params so display can be updated
   const handleLoad = () => {
     history.push(`/collection/${newCount}`);
   };
 
+  //Grid view click sets table view to false
   const handleGrid = () => {
     setTableView(false);
   };
 
+  //Table view click sets table view to true
   const handleTable = () => {
     setTableView(true);
   };
@@ -166,6 +175,7 @@ export default function Collection() {
           </div>
         </div>
       ) : (
+        // View if user has not added any kanji to this status
         <>
           <div className="cardWrapper">
             {filteredItems.length ? (

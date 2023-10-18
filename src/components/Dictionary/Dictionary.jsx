@@ -12,12 +12,15 @@ export default function Dictionary() {
   const history = useHistory();
   const params = useParams();
 
+  //Data
   const all = useSelector((store) => store.all);
   const kanji = all.map((item) => item.kanji);
 
+  //Set amount of cards on page based off params
   const count = params.count ? params.count : 30;
   const newCount = parseInt(count) + 30;
 
+  //Search text state
   const [searchText, setSearchText] = useState("");
 
   let searchHandler = (event) => {
@@ -37,6 +40,7 @@ export default function Dictionary() {
     }
   });
 
+  //Set count in params so display can be updated
   const handleLoad = () => {
     history.push(`/dictionary/${newCount}`);
   };

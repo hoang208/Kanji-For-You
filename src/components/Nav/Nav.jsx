@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,15 +7,22 @@ function Nav() {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
-  const scrollUp = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+  //Navbar state
+  const [navbar, setNavBar] = useState(false);
+
+  //Change navbar class based on scroll
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 52) {
+        setNavBar(true);
+      } else {
+        setNavBar(false);
+      }
     });
-  };
+  }, []);
 
   return (
-    <div className="nav">
+    <div className={navbar ? "nav scroll" : "nav"}>
       <ul>
         {/* If no user is logged in, show these links */}
         {!user.id && (

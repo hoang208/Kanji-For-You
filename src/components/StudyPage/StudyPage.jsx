@@ -8,12 +8,14 @@ export default function StudyPage() {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  //Data
   const all = useSelector((store) => store.all);
 
   useEffect(() => {
     dispatch({ type: "GET_ALL" });
   }, []);
 
+  //Filter items to those set to learning and random number for randomly selecting what item to display
   const filteredItems = all.filter((item) => item.status === "Learning");
   const random = Math.floor(Math.random() * filteredItems.length);
 

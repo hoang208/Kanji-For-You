@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 export default function DictionaryItem(props) {
   const history = useHistory();
 
+  //Sends user to details page for that kanji
   const kanjiClicked = () => {
     history.push(`/kanji/${props.kanji}`);
   };

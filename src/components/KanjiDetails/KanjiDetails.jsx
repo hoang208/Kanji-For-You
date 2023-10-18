@@ -16,9 +16,12 @@ export default function KanjiDetails() {
   const params = useParams();
   const history = useHistory();
 
+  //Modal state
   const [formOpen, setFormOpen] = useState(false);
+  //Delete confirmation state
   const [confimartionOpen, setConfimarionOpen] = useState(false);
 
+  //Data
   const meanings = useSelector((store) => store.meanings);
   const kun = useSelector((store) => store.kun);
   const on = useSelector((store) => store.on);
@@ -97,13 +100,15 @@ export default function KanjiDetails() {
       </div>
       <div className="words">
         <h2 className="wordTitle">Words</h2>
-        {words.map((word, i) => (
-          <Word
-            key={i}
-            meanings={word.meanings[0].glosses}
-            variants={word.variants[0].written}
-          />
-        ))}
+        <div className="wordList">
+          {words.map((word, i) => (
+            <Word
+              key={i}
+              meanings={word.meanings[0].glosses}
+              variants={word.variants[0].written}
+            />
+          ))}
+        </div>
       </div>
       <div className="studyNotes">
         <h2>Study Notes</h2>
@@ -131,6 +136,7 @@ export default function KanjiDetails() {
           </p>
         )}
       </div>
+      {/* Confimartion and Modal  */}
       {formOpen &&
         createPortal(
           <StatusForm setFormOpen={setFormOpen} kanji={kanji} />,
