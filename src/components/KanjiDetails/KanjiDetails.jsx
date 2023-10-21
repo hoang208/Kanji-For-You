@@ -10,6 +10,7 @@ import Word from "./Word";
 import StatusForm from "./StatusForm";
 import { createPortal } from "react-dom";
 import DeleteModal from "./DeleteModal";
+import Spinner from "../Spinner/Spinner";
 
 export default function KanjiDetails() {
   const dispatch = useDispatch();
@@ -39,12 +40,21 @@ export default function KanjiDetails() {
     dispatch({ type: "GET_NOTES", payload: params.kanji });
   }, []);
 
+  //Loading state
+  const [loaded, setLoaded] = useState(false);
+
+  //Loading when words gets updated
+  useEffect(() => {
+    setTimeout(setLoaded, 800, true);
+  }, [words]);
+
   const handleEdit = () => {
     history.push(`/kanji/${params.kanji}/Save`);
   };
 
   return (
     <div className="detailsContainer">
+       {!loaded && <Spinner>LOADING KANJI...</Spinner>}
       <div className="cardCharacter">
         <h1 className="cardCharacterTitle">{params.kanji}</h1>
       </div>
