@@ -141,7 +141,7 @@ td {
   box-shadow: 0 2px 20px #e1e5ee;
 }
 
-.infinite{
+.infinite {
   max-height: 65vh;
   overflow-y: scroll;
   padding-top: 3rem;

@@ -2,17 +2,12 @@ import { useEffect, useState } from "react";
 import "./Collection.css";
 import { useDispatch, useSelector } from "react-redux";
 import CollectionItem from "./CollectionItem";
-import {
-  useHistory,
-  useParams,
-} from "react-router-dom/cjs/react-router-dom.min";
 import CollectionTableItem from "./CollectionTableItem";
 import CollectionToolTip from "./CollectionToolTip";
+import Spinner from "../Spinner/Spinner";
 
 export default function Collection() {
   const dispatch = useDispatch();
-  const history = useHistory();
-  const params = useParams();
 
   //Data
   const all = useSelector((store) => store.all);
@@ -76,8 +71,17 @@ export default function Collection() {
     setTableView(true);
   };
 
+  //Loading state
+  const [loaded, setLoaded] = useState(false);
+
+  //Loading when words gets updated
+  useEffect(() => {
+    setTimeout(setLoaded, 600, true);
+  }, [all]);
+
   return (
     <div className="collectionContainer">
+      {!loaded && <Spinner />}
       <div className="colectionHeader">
         <div className="collectionBorder">
           <div className="collectionTitleFilter">

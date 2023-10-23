@@ -54,7 +54,7 @@ export default function KanjiDetails() {
 
   return (
     <div className="detailsContainer">
-       {!loaded && <Spinner>LOADING KANJI...</Spinner>}
+      {!loaded && <Spinner />}
       <div className="cardCharacter">
         <h1 className="cardCharacterTitle">{params.kanji}</h1>
       </div>
