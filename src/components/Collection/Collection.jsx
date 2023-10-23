@@ -17,10 +17,6 @@ export default function Collection() {
   //Data
   const all = useSelector((store) => store.all);
 
-  //Set amount of cards on page based off params
-  const count = params.count ? params.count : 30;
-  const newCount = parseInt(count) + 30;
-
   useEffect(() => {
     dispatch({ type: "GET_ALL" });
   }, []);
@@ -68,11 +64,6 @@ export default function Collection() {
     } else {
       setFilteredItems([...all]);
     }
-  };
-
-  //Set count in params so display can be updated
-  const handleLoad = () => {
-    history.push(`/collection/${newCount}`);
   };
 
   //Grid view click sets table view to false
@@ -177,10 +168,10 @@ export default function Collection() {
       ) : (
         // View if user has not added any kanji to this status
         <>
-          <div className="cardWrapper">
+          <div className="cardWrapper infinite">
             {filteredItems.length ? (
               <>
-                {filteredItems.slice(0, count).map((item) => (
+                {filteredItems.map((item) => (
                   <CollectionItem
                     key={item.id}
                     kanji={item.kanji}
@@ -194,15 +185,6 @@ export default function Collection() {
               </div>
             )}
           </div>
-          {filteredItems.length ? (
-            <div className="search">
-              <button className="button load" onClick={handleLoad}>
-                Load More Kanji
-              </button>
-            </div>
-          ) : (
-            ""
-          )}
         </>
       )}
     </div>
