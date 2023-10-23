@@ -14,7 +14,7 @@ CREATE TABLE "collection" (
   "id" SERIAL PRIMARY KEY,
   "user_id" INT REFERENCES "user" NOT NULL,
   "kanji" VARCHAR (80) NOT NULL,
-  "status_id" INT REFERENCES "status" NOT NULL　DEFAULT 1,
+  "status_id" INT REFERENCES "status" NOT NULL DEFAULT 1,
   "study_notes" VARCHAR (1000) DEFAULT '',
   UNIQUE ("user_id", "kanji")
 );
