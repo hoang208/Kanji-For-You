@@ -133,7 +133,7 @@ export default function ChangeNotes() {
             <textarea
               className="textarea"
               placeholder="You have no study notes for this kanji..."
-              onChange={handleNotesChange}
+              onBlur={handleNotesChange}
               defaultValue={notes}
               maxLength="1000"
             ></textarea>

@@ -45,7 +45,7 @@ export default function KanjiDetails() {
 
   //Loading when words gets updated
   useEffect(() => {
-    setTimeout(setLoaded, 800, true);
+    setTimeout(setLoaded, 600, true);
   }, [words]);
 
   const handleEdit = () => {
