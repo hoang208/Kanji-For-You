@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CollectionToolTip({ text }) {
+export default function CollectionToolTip() {
   //Tooltip visible status
   const [isVisible, setIsVisible] = useState(false);
 
@@ -16,7 +16,11 @@ export default function CollectionToolTip({ text }) {
         >
           info
         </span>
-        {isVisible && <div className="tooltip">{text}</div>}
+        {isVisible && (
+          <div className="tooltip">
+            <p>Click on the status to change it!</p>
+          </div>
+        )}
       </div>
     </>
   );
