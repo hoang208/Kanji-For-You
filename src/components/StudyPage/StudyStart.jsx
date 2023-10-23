@@ -21,10 +21,13 @@ export default function StudyStart() {
               journey to learn kanji! <br />
               You can study any kanji that you have marked as learning throught
               the use of flashcards! <br />
-              The front of the flashcard will display the Kanji character.
+              The front of the flashcard will display the kanji character.
               <br />
               The meanings and any study notes the user has written for the
-              kanji will be displayed on the back.
+              kanji will be displayed on the back. <br />
+              You can then either move on to the next card, or mark the card as
+              learned. Additionally, you can also choose to view the dictionary
+              page for the kanji.
             </p>
             <button className="button edit" onClick={handleStudy}>
               Start Studying!
