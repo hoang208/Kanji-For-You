@@ -54,7 +54,7 @@ export default function Collection() {
 
   //prevents filtereditems being empty on refresh
   useEffect(() => {
-    setFilteredItems(all);
+    filterItems();
   }, [all]);
 
   //filters item when filter is changed
