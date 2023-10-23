@@ -58,7 +58,7 @@ function UserPage() {
         kanji in the dictionary!
       </p>
       <p>
-        Are you setup to learn japanese?{" "}
+        Are you setup to learn Japanese?{" "}
         <a href="https://learnjapanese.moe/font/">Click here to make sure!</a>
       </p>
       <div className="buttonContainer">

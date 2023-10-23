@@ -22,7 +22,7 @@ function LandingPage() {
             <div className="heroContent">
               <p>
                 Kanji For You is a website meant to aid you in your journey to
-                learn Japanese Kanji. <br />
+                learn Japanese kanji. <br />
                 The website serves as a kanji dictionary. You can search up any
                 jōyō kanji. Information about the kanji will be displayed such
                 as meaning, readings, and example words that use the kanji.{" "}

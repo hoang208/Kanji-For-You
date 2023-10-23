@@ -183,6 +183,7 @@ td {
   position: relative;
   display: inline-block;
   width: fit-content;
+  z-index: 99;
 }
 
 .tooltip {
@@ -193,4 +194,5 @@ td {
   color: white;
   padding: 1rem;
   border-radius: 0.2rem;
+  z-index: 99;
 }
