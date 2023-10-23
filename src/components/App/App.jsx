@@ -124,11 +124,7 @@ function App() {
             <ChangeNotes />
           </ProtectedRoute>
           {/* Collection Page */}
-          <ProtectedRoute exact path="/collection">
-            <Collection />
-          </ProtectedRoute>
-          {/* Collection load more */}
-          <ProtectedRoute path="/collection/:count">
+          <ProtectedRoute path="/collection">
             <Collection />
           </ProtectedRoute>
           {/* Stats Page */}

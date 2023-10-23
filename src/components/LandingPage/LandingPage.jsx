@@ -23,13 +23,13 @@ function LandingPage() {
               <p>
                 Kanji For You is a website meant to aid you in your journey to
                 learn Japanese Kanji. <br />
-                The website serves as a Kanji dictionary. You can search up any
-                jōyō kanji. Information about the Kanji will be displayed such
+                The website serves as a kanji dictionary. You can search up any
+                jōyō kanji. Information about the kanji will be displayed such
                 as meaning, readings, and example words that use the kanji.{" "}
                 <br />
-                Additionally, you can add Kanji to your collection and mark the
+                Additionally, you can add kanji to your collection and mark the
                 learning status for that particular kanji. <br />
-                This allows you to keep track of all the Kanji you are learning
+                This allows you to keep track of all the kanji you are learning
                 or have learned. <br />
                 Kanji For You uses{" "}
                 <a href="https://kanjiapi.dev/">kanjiapi.dev</a>, an amazing api

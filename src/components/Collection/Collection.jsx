@@ -2,24 +2,15 @@ import { useEffect, useState } from "react";
 import "./Collection.css";
 import { useDispatch, useSelector } from "react-redux";
 import CollectionItem from "./CollectionItem";
-import {
-  useHistory,
-  useParams,
-} from "react-router-dom/cjs/react-router-dom.min";
 import CollectionTableItem from "./CollectionTableItem";
 import CollectionToolTip from "./CollectionToolTip";
+import Spinner from "../Spinner/Spinner";
 
 export default function Collection() {
   const dispatch = useDispatch();
-  const history = useHistory();
-  const params = useParams();
 
   //Data
   const all = useSelector((store) => store.all);
-
-  //Set amount of cards on page based off params
-  const count = params.count ? params.count : 30;
-  const newCount = parseInt(count) + 30;
 
   useEffect(() => {
     dispatch({ type: "GET_ALL" });
@@ -70,11 +61,6 @@ export default function Collection() {
     }
   };
 
-  //Set count in params so display can be updated
-  const handleLoad = () => {
-    history.push(`/collection/${newCount}`);
-  };
-
   //Grid view click sets table view to false
   const handleGrid = () => {
     setTableView(false);
@@ -85,8 +71,17 @@ export default function Collection() {
     setTableView(true);
   };
 
+  //Loading state
+  const [loaded, setLoaded] = useState(false);
+
+  //Loading when words gets updated
+  useEffect(() => {
+    setTimeout(setLoaded, 600, true);
+  }, [all]);
+
   return (
     <div className="collectionContainer">
+      {!loaded && <Spinner />}
       <div className="colectionHeader">
         <div className="collectionBorder">
           <div className="collectionTitleFilter">
@@ -177,10 +172,10 @@ export default function Collection() {
       ) : (
         // View if user has not added any kanji to this status
         <>
-          <div className="cardWrapper">
+          <div className="cardWrapper infinite">
             {filteredItems.length ? (
               <>
-                {filteredItems.slice(0, count).map((item) => (
+                {filteredItems.map((item) => (
                   <CollectionItem
                     key={item.id}
                     kanji={item.kanji}
@@ -194,15 +189,6 @@ export default function Collection() {
               </div>
             )}
           </div>
-          {filteredItems.length ? (
-            <div className="search">
-              <button className="button load" onClick={handleLoad}>
-                Load More Kanji
-              </button>
-            </div>
-          ) : (
-            ""
-          )}
         </>
       )}
     </div>

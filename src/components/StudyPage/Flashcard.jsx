@@ -21,8 +21,19 @@ export default function Flashcard(props) {
   };
 
   //Sends user to details page for kanji
-  const kanjiClicked = () => {
+  const handleView = () => {
     history.push(`/kanji/${props.kanji}`);
+  };
+
+  //Marks kanji as learned
+  const handleLearned = () => {
+    dispatch({
+      type: "UPDATE_STATUS",
+      payload: {
+        status_id: 4,
+        kanji: props.kanji,
+      },
+    });
   };
 
   return (
@@ -52,8 +63,11 @@ export default function Flashcard(props) {
         </div>
       </div>
       <div className="flashcardButtonGroup">
-        <button className="cardBtn" onClick={kanjiClicked}>
+        <button className="cardBtn" onClick={handleView}>
           View
+        </button>
+        <button className="cardBtn save" onClick={handleLearned}>
+          Learned
         </button>
         <button className="button" onClick={handleNext}>
           Next
